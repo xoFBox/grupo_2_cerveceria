@@ -4,6 +4,8 @@ Se apunta a un público mayor de 18 años y que recida en la zona del partido de
 
 ## Descripción del Grupo
 
+Hola, soy Nahir, soy una de las integrantes del grupo. Tengo 27 y soy de San Luis. Mis pasatiempos son aprender ingles y ver videos en youtube. 
+
 
 
 
