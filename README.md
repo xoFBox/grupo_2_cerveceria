@@ -6,6 +6,7 @@ Se apunta a un público mayor de 18 años y que recida en la zona del partido de
 
 Hola, soy Nahir, soy una de las integrantes del grupo. Tengo 27 y soy de San Luis. Mis pasatiempos son aprender ingles y ver videos en youtube. 
 
+Hola, soy Fermin, tengo 33 años y soy de Gral Pico (La Pampa). Mis pasatiempos son entrenar, los videojuegos y aprender nuevas cosas navegando en internet.
 
 
 
