@@ -6,6 +6,10 @@ Se apunta a un público mayor de 18 años y que recida en la zona del partido de
 
 Luciano Fazio // 32 años, vivo en San Fernando, provincia de Buenos Aires. Me gusta el futbol y pasar tiempo con mis amigos. Hace muchos años me dedico a la tecnologia y este año arranque en el mundo del desarrollo con muchas ganas de aprender y de disfrutar todo este camino!
 
+Hola, soy Nahir, soy una de las integrantes del grupo. Tengo 27 y soy de San Luis. Mis pasatiempos son aprender ingles y ver videos en youtube. 
+
+Hola, soy Fermin, tengo 33 años y soy de Gral Pico (La Pampa). Mis pasatiempos son entrenar, los videojuegos y aprender nuevas cosas navegando en internet.
+
 
 
 ### Sitios de referencia
