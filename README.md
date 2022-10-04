@@ -4,6 +4,7 @@ Se apunta a un público mayor de 18 años y que recida en la zona del partido de
 
 ## Descripción del Grupo
 
+Luciano Fazio // 32 años, vivo en San Fernando, provincia de Buenos Aires. Me gusta el futbol y pasar tiempo con mis amigos. Hace muchos años me dedico a la tecnologia y este año arranque en el mundo del desarrollo con muchas ganas de aprender y de disfrutar todo este camino!
 
 
 
