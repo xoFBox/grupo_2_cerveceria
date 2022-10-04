@@ -10,6 +10,8 @@ Hola, soy Nahir, soy una de las integrantes del grupo. Tengo 27 y soy de San Lui
 
 Hola, soy Fermin, tengo 33 años y soy de Gral Pico (La Pampa). Mis pasatiempos son entrenar, los videojuegos y aprender nuevas cosas navegando en internet.
 
+Hola, soy Gaston, tengo 33 años de edad y vivo desde que naci en ciudad autonoma de buenos aires. Me desempeño como profesional de salud desde hace 10 años en una institucion provada.  Mis pasatiempos son practicar yoga y ver a river comiendo un asado.
+
 
 
 ### Sitios de referencia
