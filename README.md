@@ -17,5 +17,7 @@ Hola, soy Gaston, tengo 33 años de edad y vivo desde que naci en ciudad autonom
 ### Sitios de referencia
 
 https://hormiganegra.com.ar/ -> La estética del home y sus animaciones.
-https://www.elgalpondetacuara.com/
+https://www.elgalpondetacuara.com/ -> Su carrito de compras.
 https://www.cervezaantares.com/ -> Por la información de la fabrica e historia. La ventana modal de ser mayor de edad.
+http://elpatiodeloslobos.com/ -> Por la información de ubicacion, foto de local y el mapa.
+https://bluedog.com.ar/ -> Por su estetica en general, sus imagenes de fondo en el carrusel.
