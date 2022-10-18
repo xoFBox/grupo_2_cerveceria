@@ -1,0 +1,23 @@
+{
+  "name": "grupo_2_cerveceria",
+  "version": "1.0.0",
+  "description": "La oferta que se brindara es la venta de cerveza artesanal Amanecer y otras cervezas invitadas, ya sea en botellas o Growlers (botella de un galon), tambien brindamos opciones gastronomicas o alquiler de choperas con barriles. Tambien contara con la venta de indumentaria de la misma como remeras, gorras y otros productos personalizados.\r Se apunta a un público mayor de 18 años y que recida en la zona del partido de Trenque Lauquen y alrededores.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xoFBox/grupo_2_cerveceria.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xoFBox/grupo_2_cerveceria/issues"
+  },
+  "homepage": "https://github.com/xoFBox/grupo_2_cerveceria#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
