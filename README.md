@@ -21,3 +21,7 @@ https://www.elgalpondetacuara.com/ -> Su carrito de compras.
 https://www.cervezaantares.com/ -> Por la información de la fabrica e historia. La ventana modal de ser mayor de edad.
 http://elpatiodeloslobos.com/ -> Por la información de ubicacion, foto de local y el mapa.
 https://bluedog.com.ar/ -> Por su estetica en general, sus imagenes de fondo en el carrusel.
+
+### Tablero de trabajo Trello
+
+https://trello.com/b/UCZMY6K4/amanecer
