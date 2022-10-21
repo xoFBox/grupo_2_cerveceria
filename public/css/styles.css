@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+
+html{
+    font-size: 16px;
+}
+
+header{
+    top: 0;
+    position: fixed;
+    width: 100%;
+    background-color: black;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px 0px;
+    height: 80px;
+}
+ header i {
+    color: #ffff;
+    font-size: 20px;
+ }
+
+ main{
+    margin-top: 80px;
+ }
+
+.logo{
+    width: 45%;
+}
+
+footer{
+    color: #ffff;
+    background-color: black;
+    padding: 5px;
+    text-align: center;
+}
+footer div{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 5px 0px;
+}
+footer p{
+    margin-top: 10px;
+    font-size: 8px;
+}
+footer i{
+    font-size:30px;
+    margin: 5px;
+}
+
+@media (min-width: 769px){
+    header i {
+        font-size: 30px;
+    }
+}
