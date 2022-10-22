@@ -28,7 +28,7 @@ header{
  }
 
  main{
-    margin-top: 80px;
+    margin-top: 85px;
  }
 
 .logo{
@@ -38,12 +38,14 @@ header{
 footer{
     color: #ffff;
     background-color: black;
+    position: relative;                     /*cambie la posicion del footer para que quede abajo*/
+    bottom: 0;                      
+    width: 100%;
     padding: 5px;
     text-align: center;
 }
 footer div{
-    display: flex;
-    width: 100%;
+    display: flex;   
     justify-content: space-around;
     align-items: flex-start;
     padding: 5px 0px;
