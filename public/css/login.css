@@ -5,7 +5,7 @@ main{
     align-items: center;
     flex-direction: column;
     justify-content: center;
-    height: 80vh;
+    height: 85vh;
     background-image: url(https://i.pinimg.com/originals/58/8c/4b/588c4ba75cbd6dd9fe3c5bfafaaccdea.jpg)!important;
 }
 
@@ -61,6 +61,5 @@ footer{
     main div{
         
         width: 600px;
-        height: 450px;
     }
 }
