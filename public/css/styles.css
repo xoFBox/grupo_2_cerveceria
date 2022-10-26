@@ -37,6 +37,11 @@ header{
  }
  a{
     text-decoration: none;
+    color: white;
+    cursor: pointer;
+ }
+ a:hover{
+    cursor: pointer;
  }
 .logo{
     width: 45%;
@@ -102,10 +107,15 @@ footer i{
         align-items: flex-end;
     }
     footer div{
+        margin-top: 15px;
         width: 30%;
 
     }
     footer p{
         align-self: flex-start;
+        font-size: 13px;
+    }
+    footer div a i{
+        font-size: 50px;
     }
 }
