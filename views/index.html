@@ -4,56 +4,81 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/styles.css">
     <script src="https://kit.fontawesome.com/1055fd947b.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <title>Amanecer</title>
 </head>
 <body>
    <header>
-        <img src="images/logoBlanco.png" alt="logo" class="logo">
-        <i class="fas fa-bars"></i>
-        <i class="fas fa-shopping-basket"></i>
-        <i class="fa-solid fa-user"></i>
+       <img src="images/logoBlanco.png" alt="logo" class="logo">
+       <nav class="main-nav">
+           <ul>
+               <li><a href="/productDetail">CERVEZAS</a></li>
+               <li><a href="/productDetail">MERCHANDISING</a></li>
+               <li><a href="/productDetail">COMIDA</a></li>
+               <li><a href="#">QUIENES SOMOS</a></li>
+               <li><a href="#">CONTACTO</a></li>
+           </ul>
+       </nav>
+        <i class="fas fa-bars" id="menu"></i>
+        <a href="/productCart"><i class="fa-solid fa-cart-shopping"></i></a>
+        <a href="/login"><i class="fa-solid fa-user"></i></a>
    </header>
    <main>
-    <h1>cerveceria</h1>
-    <p>
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Porro velit nemo earum vitae blanditiis aut adipisci fuga facere explicabo quae, distinctio tenetur aliquam eligendi quisquam eum deserunt temporibus numquam modi.
-    </p>
+    <div class="hero">
+                <img src="images/slide1.jpg" alt="slide1">
+                <div class="less">
+                    <i class="fa-sharp fa-solid fa-less-than"></i>
+                </div>
+                <div class="greater">
+                    <i class="fa-sharp fa-solid fa-greater-than"></i>
+                </div>
+    </div>
+    <div class="animation-container">
+        <img src="/images/logoNegro.png" alt="logo-negro" class="animate__animated animate__backInDown animated-logo" > 
+        <div class="glow"></div>
+    </div>
+    <h1>Cervezas destacadas</h1>
+    <section class="info">
+        <article>
+            <a href="/productDetail">
+                <h2>IPA</h2>
+                <img class="product" src="images/IPA.jpg" alt="IPA">
+            </a>
+        </article>
+        <article>
+            <a href="/productDetail">
+                <h2>Bohemian Pilsener</h2>
+                <img class="product" src="images/bohemian.jpg" alt="bohemian">
+            </a>
+        </article>
+        <article>
+            <a href="/productDetail">
+                <h2>Scotish</h2>
+                <img class="product" src="images/scotish.jpg" alt="product">
+            </a>
+        </article>
+    </section>
+    <h2>Nuestro local</h2>
+    <div class="images-local">
+        <div class="local">
+            <img src="/images/slide3.jpg" alt="local">
+        </div>
+        <div class="mapa">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3216.3929744397647!2d-62.5478057!3d-36.2785137!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95c193899d478d1f%3A0x6b2940b25838b958!2sAlem%2029%2C%20B6405BFA%2030%20de%20Agosto%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1666664701627!5m2!1ses!2sar" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </div>
 
-    <h2>info</h2>
-    <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam neque veritatis necessitatibus voluptas mollitia harum aliquam hic itaque atque, voluptatem quia soluta doloribus, rem tempora eaque amet sapiente modi aut!</p>
-    <h1>cerveceria</h1>
-    <p>
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Porro velit nemo earum vitae blanditiis aut adipisci fuga facere explicabo quae, distinctio tenetur aliquam eligendi quisquam eum deserunt temporibus numquam modi.
-    </p>
 
-    <h2>info</h2>
-    <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam neque veritatis necessitatibus voluptas mollitia harum aliquam hic itaque atque, voluptatem quia soluta doloribus, rem tempora eaque amet sapiente modi aut!</p><h1>cerveceria</h1>
-    <p>
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Porro velit nemo earum vitae blanditiis aut adipisci fuga facere explicabo quae, distinctio tenetur aliquam eligendi quisquam eum deserunt temporibus numquam modi.
-    </p>
-
-    <h2>info</h2>
-    <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam neque veritatis necessitatibus voluptas mollitia harum aliquam hic itaque atque, voluptatem quia soluta doloribus, rem tempora eaque amet sapiente modi aut!</p><h1>cerveceria</h1>
-    <p>
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Porro velit nemo earum vitae blanditiis aut adipisci fuga facere explicabo quae, distinctio tenetur aliquam eligendi quisquam eum deserunt temporibus numquam modi.
-    </p>
-
-    <h2>info</h2>
-    <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam neque veritatis necessitatibus voluptas mollitia harum aliquam hic itaque atque, voluptatem quia soluta doloribus, rem tempora eaque amet sapiente modi aut!</p><h1>cerveceria</h1>
-    <p>
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Porro velit nemo earum vitae blanditiis aut adipisci fuga facere explicabo quae, distinctio tenetur aliquam eligendi quisquam eum deserunt temporibus numquam modi.
-    </p>
-
-    <h2>info</h2>
-    <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam neque veritatis necessitatibus voluptas mollitia harum aliquam hic itaque atque, voluptatem quia soluta doloribus, rem tempora eaque amet sapiente modi aut!</p>
    </main>
    <footer>
        <div>
-           <i class="fa-brands fa-square-instagram"></i>
-           <i class="fa-brands fa-square-facebook"></i>
-           <i class="fa-brands fa-square-whatsapp"></i>
+            <a href="https://www.facebook.com/cervezamanecer" target="_blank"><i class="fa-brands fa-square-facebook"></i></a>
+            <a href="https://www.instagram.com/cervezamanecer/" target="_blank"><i class="fa-brands fa-square-instagram"></i></a>
+            <a href="https://wa.me/5492392633025" target="_blank"><i class="fa-brands fa-square-whatsapp"></i></a>
+            
         </div>
         <p>Copyright ©2022 Amanecer S.A.</p>
    </footer>
