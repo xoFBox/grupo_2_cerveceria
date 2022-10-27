@@ -53,13 +53,9 @@ main a{
     color: blue;
 }
 
-footer{
-    position: absolute;
-}
-
 @media (min-width: 1024px){
     main div{
-        
+
         width: 600px;
     }
 }
