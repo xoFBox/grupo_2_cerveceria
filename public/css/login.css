@@ -54,7 +54,7 @@ main a{
 }
 
 footer{
-    position: absolute;
+    position: relative;
 }
 
 @media (min-width: 1024px){
