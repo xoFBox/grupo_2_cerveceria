@@ -44,6 +44,10 @@ main button, input{
     margin: 20px;
 }
 
+main input:invalid{
+    border: 2px solid red;
+}
+
 main button{
     align-self: center;
     width: 40%;
@@ -53,13 +57,9 @@ main a{
     color: blue;
 }
 
-footer{
-    position: relative;
-}
-
 @media (min-width: 1024px){
     main div{
-        
+
         width: 600px;
     }
 }

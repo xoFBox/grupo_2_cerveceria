@@ -47,6 +47,9 @@ header{
     width: 45%;
     max-width: 220px;
 }
+.logo img{
+    width: 100%;
+}
 
 footer{
     color: #ffff;
