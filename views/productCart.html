@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/productCart.css">
     <script src="https://kit.fontawesome.com/1055fd947b.js" crossorigin="anonymous"></script>
     <title>Document</title>
 </head>
@@ -25,7 +25,64 @@
          <a href="/productCart"><i class="fa-solid fa-cart-shopping"></i></a>
          <a href="/login"><i class="fa-solid fa-user"></i></a>
     </header>
-
+    <main class="card-main">
+        <section class="name-section"> 
+           <div class="cant"><p>Cant</p></div>   
+            <div class="imagenProd"><p>Producto</p></div>
+            <div class="descripcion"><p>Descripción</p></div>
+            <div class="subTotal"><p>Subtotal</p></div>
+            <div class="eliminar"> </div>
+        </section>
+        <section class="vendido" name="producto">
+            <div class="v-cant"><p>1</p></div>   
+            <div class="v-imagenProd"><img src="/images/mini8.Scotish.jpg" alt="scotish" class="mini-img"></div>
+            <div class="v-descripcion"><p>Soy una cerveza</p></div>
+            <div class="v-subTotal"><p>$100</p></div>
+            <div class="v-eliminar"><button type="reset" value="eliminar" name="producto">X</button></div>
+        </section>
+        <section class="vendido" name="producto">
+          <div class="v-cant"><p>6</p></div>   
+            <div class="v-imagenProd"><img src="/images/mini8.Scotish.jpg" alt="scotish" class="mini-img"></div>
+            <div class="v-descripcion"><p>Cerveza Scotish</p></div>
+            <div class="v-subTotal"><p>$6100</p></div>
+            <div class="v-eliminar"><button type="reset" value="eliminar" name="producto">X</button></div>
+        </section>
+        <section class="vendido" name="producto">
+            <div class="v-cant"><p>2</p></div>   
+            <div class="v-imagenProd"><img src="/images/mini1.IPA.jpg" alt="" class="mini-img"></div>
+            <div class="v-descripcion"><p>Cerveza IPA</p></div>
+            <div class="v-subTotal"><p>$900</p></div>
+            <div class="v-eliminar"><button type="reset" value="eliminar" name="producto">X</button></div>
+        </section>
+        <section class="vendido" name="producto">
+            <div class="v-cant"><p></p></div>   
+            <div class="v-imagenProd"><img src="" alt="cerveza" class="mini-img"></div>
+            <div class="v-descripcion"><p></p></div>
+            <div class="v-subTotal"><p></p></div>
+            <div class="v-eliminar"><button type="reset" value="eliminar" name="producto"></button></div>
+        </section>
+        <section class="vendido" name="producto">
+            <div class="v-cant"><p></p></div>   
+            <div class="v-imagenProd"><img src="" alt="cerveza" class="mini-img"></div>
+            <div class="v-descripcion"><p></p></div>
+            <div class="v-subTotal"><p></p></div>
+            <div class="v-eliminar"><button type="reset" value="eliminar" name="producto"></button></div>
+        </section>
+        <div class="end-table">
+            <div> Total  </div>
+            <input type="text">
+        </div>
+        <br>
+        <form action="/" method="post"><div class="a-pagar">
+            <label name="pagar"><h3>Elija su forma de pago</h3>       
+           <div class="opciones-pago"><br><input type="radio" name="pagar" value="efectivo">Efectivo
+            <br><input type="radio" name="pagar" value="tarj-deb">Tarjeta de Débito
+            <br><input type="radio" name="pagar" value="tarj-cred">Tarjeta de Crédito <input type="number"/> cuotas
+            <br><input type="radio" name="pagar" value="tranferencia">Transferencia </label></div> 
+ 
+    <br><button type="sumit" value="pagar" class="boton-pagar"><p>Pagar</p></button>
+<button type="reset" value="cancelar" class="boton-cancelar"><p>Cancelar</p></button></form></div>
+    <br>
     <footer>
         <div>
              <a href="https://www.facebook.com/cervezamanecer" target="_blank"><i class="fa-brands fa-square-facebook"></i></a>
@@ -35,5 +92,6 @@
          </div>
          <p>Copyright ©2022 Amanecer S.A.</p>
     </footer>
+    
 </body>
 </html>

@@ -1,0 +1,120 @@
+.card-main{
+    border: solid 1px red;
+    margin-left: 2px;
+    margin-right: 2px
+}
+.name-section{
+ background-color: black;
+ color: whitesmoke;
+ border: solid 2px whitesmoke;
+ margin-top: 15px;
+ margin-bottom: 5px;
+ width: 100%;
+ display: flex;
+ justify-content: space-between;
+}
+.vendido{
+    background-color: whitesmoke;
+    color: black;
+    border: solid 2px whitesmoke;
+    margin-top: 15px;
+    margin: 5px;
+    width: 99%;
+    display: flex;
+    justify-content: space-between;
+}
+.cant{
+    text-align: center;
+    width: 10%;
+}
+.product{
+    text-align: center;
+    width: 30%;
+}
+
+.descripcion {
+    text-align: center;
+    width: 30%;
+    
+}
+
+.subtotal{
+    text-align: center;
+    width: 20%;
+}
+
+.eliminar{
+    text-align: center;
+    width: 10%;
+}
+.v-cant{
+    text-align: center;
+    width: 10%;
+}
+.v-product{
+    text-align: center;
+    width: 30%;
+}
+
+.v-descripcion {
+    text-align: center;
+    width: 30%;
+    
+}
+
+.v-subtotal{
+    text-align: center;
+    width: 20%;
+}
+
+.v-eliminar{
+    text-align: center;
+    width: 10%;
+}
+.end-table{
+    background-color: black;
+    color:whitesmoke;
+    padding: 2px;
+    padding-right: 5px;
+    text-align:right;
+    display:flex;
+    justify-content: right;
+}
+
+.a-pagar{
+    background-color:whitesmoke ;
+}
+form h3{
+    background-color: black;
+    padding: 2px;
+    padding-right: 27px;
+    text-align: right;
+    color: whitesmoke;
+    position: relative;
+    right: 40px;
+}
+.opciones-pago{
+    margin-left: 7px;
+    text-align:left
+}
+
+.boton-pagar{
+    width: 15%;
+    background-color: black;
+    color:whitesmoke;
+    margin: 2px;
+    border-radius: 3px;
+
+}
+.boton-cancelar{
+    width: 15%;
+    background-color: black;
+    color:whitesmoke;
+    margin: 2px;
+    border-radius: 3px;
+}
+
+.mini-img{
+ max-width: 50px;
+ max-height: 150px;
+}
