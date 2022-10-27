@@ -9,6 +9,7 @@
 
 html{
     font-size: 16px;
+    font-family: 'Roboto Condensed', sans-serif;
 }
 
 header{
@@ -28,11 +29,23 @@ header{
  }
 
  main{
-    margin-top: 85px;
+    margin-top: 80px;
  }
 
+ ul, li{
+    list-style: none;
+ }
+ a{
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+ }
+ a:hover{
+    cursor: pointer;
+ }
 .logo{
     width: 45%;
+    max-width: 220px;
 }
 
 footer{
@@ -59,8 +72,52 @@ footer i{
     margin: 5px;
 }
 
+.main-nav{
+    display: none;
+}
+
 @media (min-width: 769px){
     header i {
         font-size: 30px;
+    }
+}
+
+@media (min-width: 1024px) {
+
+    #menu {
+        display: none;
+    }
+
+    .main-nav{
+        display: block;
+    }
+    .main-nav ul{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .main-nav ul li{
+        padding: 10px;
+    }
+    .main-nav ul li a{
+        color: white;
+    }
+    
+    footer{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+    footer div{
+        margin-top: 15px;
+        width: 30%;
+
+    }
+    footer p{
+        align-self: flex-start;
+        font-size: 13px;
+    }
+    footer div a i{
+        font-size: 50px;
     }
 }
