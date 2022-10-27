@@ -109,6 +109,8 @@ article {
      main {
         display: flex;
         flex-wrap: wrap;
+        background-image: url(https://i.pinimg.com/originals/58/8c/4b/588c4ba75cbd6dd9fe3c5bfafaaccdea.jpg)!important;
+        background-repeat: repeat;
     }
     
     article {
@@ -116,10 +118,13 @@ article {
             border-bottom: none;
             padding: 20px;
             transition: all 400ms;
+            background: whitesmoke;
     }
 
     article:hover {
-        box-shadow: 0px 0px 10px rgb(100, 100, 100);
+        box-shadow: 0px 0px 45px 25px rgba(255,215,0,0.75);
+-webkit-box-shadow: 0px -1px 45px 25px rgba(255,215,0,0.75);
+-moz-box-shadow: 0px 0px 45px 25px rgba(255,215,0,0.75);
     }
 
     article i {
