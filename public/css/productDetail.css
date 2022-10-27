@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 16px;
+}
+
+header{
+    top: 0;
+    position: fixed;
+    width: 100%;
+    background-color: black;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px 0px;
+    height: 80px;
+}
+ header i {
+    color: #ffff;
+    font-size: 20px;
+ }
+
+ main{
+    margin-top: 85px;
+ }
+
+.logo{
+    width: 45%;
+}
+
+footer{
+    color: #ffff;
+    background-color: black;
+    position: relative;                     /*cambie la posicion del footer para que quede abajo*/
+    bottom: 0;                      
+    width: 100%;
+    padding: 5px;
+    text-align: center;
+}
+footer div{
+    display: flex;   
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 5px 0px;
+}
+footer p{
+    margin-top: 10px;
+    font-size: 8px;
+}
+footer i{
+    font-size:30px;
+    margin: 5px;
+}
+
+article {
+    text-align: center;
+    padding: 10px;
+    margin-bottom: 10px;
+    margin: 10px 0px;
+    border-bottom: 5px solid black;
+}
+
+.details-imgarticle {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.details-imgarticle p {
+    font-size: 25px;
+    text-align: left;
+    color: green;
+}
+
+.details-imgarticle h4 {
+    font-size: 35px;
+    text-align: left;
+    font-weight: bold;
+}
+
+.details-unidades-carrito {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-top: 4px;
+    font-weight: bold;
+    padding-bottom: 10px;
+}
+
+.details-unidades-carrito input {
+    background-color: green;
+    color: white;
+    padding: 4px;
+    border-radius: 4px;
+}
+
+
+@media (min-width: 769px){
+    header i {
+        font-size: 30px;
+    }
+
+     main {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+    article {
+            width: 40%;
+            border-bottom: none;
+            padding: 20px;
+            transition: all 400ms;
+    }
+
+    article:hover {
+        box-shadow: 0px 0px 10px rgb(100, 100, 100);
+    }
+
+    article i {
+        font-size: 25px;
+        transition: transform 0.7s;
+    }
+
+    article:hover i{
+        transform: rotate(-45deg);
+    }
+
+    .details-imgarticle {
+        justify-content: space-evenly;
+        padding: 50px;
+    }
+
+    .details-unidades-carrito {
+        font-size: 20px;
+    }
+
+    .details-unidades-carrito input {
+        font-size: 15px;
+    }
+
+}
