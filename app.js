@@ -1,14 +1,19 @@
 const express = require('express')
 const path = require('path')
 
+const mainRoute = require('./src/routes/main')
+
 const app = express()
 
 app.use(express.static('public'))
+app.set('view engine', 'ejs')
 
 
-app.get('/', (req, res)=>{
-    res.sendFile(path.join(__dirname + '/views/index.html'))
-})
+// Rutas
+
+app.use(mainRoute)
+
+
 
 app.get('/productDetail', (req, res)=>{
     res.sendFile(path.join(__dirname + '/views/productDetail.html'))
