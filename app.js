@@ -2,6 +2,7 @@ const express = require('express')
 const path = require('path')
 
 const mainRoute = require('./src/routes/main')
+const productRoute = require('./src/routes/product')
 
 const app = express()
 
@@ -11,13 +12,9 @@ app.set('view engine', 'ejs')
 
 // Rutas
 
-app.use(mainRoute)
+app.use('/', mainRoute);
+app.use('/products', productRoute);
 
-
-
-app.get('/productDetail', (req, res)=>{
-    res.sendFile(path.join(__dirname + '/views/productDetail.html'))
-})
 
 app.get('/login', (req, res)=>{
     res.sendFile(path.join(__dirname + '/views/login.html'))
