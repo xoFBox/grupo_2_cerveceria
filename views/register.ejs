@@ -1,30 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/register.css">
-    <script src="https://kit.fontawesome.com/1055fd947b.js" crossorigin="anonymous"></script>
-    <title>Document</title>
-</head>
+    <%- include('./partials/head'), style %> 
 <body>
-    <header>
-        <a href="/" class="logo"><img src="images/logoBlanco.png" alt="logo"></a>
-        <nav class="main-nav">
-            <ul>
-                <li><a href="/productDetail">CERVEZAS</a></li>
-                <li><a href="/productDetail">MERCHANDISING</a></li>
-                <li><a href="/productDetail">COMIDA</a></li>
-                <li><a href="#">QUIENES SOMOS</a></li>
-                <li><a href="#">CONTACTO</a></li>
-            </ul>
-        </nav>
-         <i class="fas fa-bars" id="menu"></i>
-         <a href="/productCart"><i class="fa-solid fa-cart-shopping"></i></a>
-         <a href="/login"><i class="fa-solid fa-user"></i></a>
-    </header>
+    <%- include('./partials/header') %>
 
    <main>
     <div>
@@ -41,19 +19,11 @@
 
             <button type="submit">Enviar</button>
         </form>
-        <a href="/login">¿Ya estas registrado?</a>
+        <a href="/user/login">¿Ya estas registrado?</a>
     </div>
     
 </main>
 
-<footer>
-    <div>
-         <a href="https://www.facebook.com/cervezamanecer" target="_blank"><i class="fa-brands fa-square-facebook"></i></a>
-         <a href="https://www.instagram.com/cervezamanecer/" target="_blank"><i class="fa-brands fa-square-instagram"></i></a>
-         <a href="https://wa.me/5492392633025" target="_blank"><i class="fa-brands fa-square-whatsapp"></i></a>
-         
-     </div>
-     <p>Copyright ©2022 Amanecer S.A.</p>
-</footer>
+    <%- include('./partials/footer')  %>
 </body>
 </html>

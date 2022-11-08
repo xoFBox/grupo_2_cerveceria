@@ -3,6 +3,7 @@ const path = require('path')
 
 const mainRoute = require('./src/routes/main')
 const productRoute = require('./src/routes/product')
+const userRoute = require('./src/routes/user')
 
 const app = express()
 
@@ -14,19 +15,8 @@ app.set('view engine', 'ejs')
 
 app.use('/', mainRoute);
 app.use('/products', productRoute);
+app.use('/user', userRoute);
 
-
-app.get('/login', (req, res)=>{
-    res.sendFile(path.join(__dirname + '/views/login.html'))
-})
-
-app.post('/login', (req, res)=>{
-    res.redirect('/')
-})
-
-app.get('/register', (req, res)=>{
-    res.sendFile(path.join(__dirname + '/views/register.html'))
-})
 
 app.get('/productCart', (req, res)=>{
     res.sendFile(path.join(__dirname + '/views/productCart.html'))
