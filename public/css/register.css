@@ -1,5 +1,6 @@
 main{
     display: flex;
+    height: 85vh;
     width: 100%;
     align-items: center;
     flex-direction: column;
@@ -11,7 +12,7 @@ main div{
     display: flex;
     background-color: whitesmoke;
     width: 100%;
-    height: auto;
+    height: 450px;
     max-width: 400px;
     align-items: center;
     flex-direction: column;

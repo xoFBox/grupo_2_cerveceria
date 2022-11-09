@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%- include('./partials/head'), style %> 
+    <%- include('../partials/head'), style %> 
 <body>
-    <%- include('./partials/header') %>
+    <%- include('../partials/header') %>
    
    <main>
         <div>
-            <h5>Actualice tu producto</h5>
-            <form action="/product/modify" method="POST">
+            <h5>Crea tu producto</h5>
+            <form action="/product/create" method="POST">
                 <label for="pName"></label>
                 <input type="text" name="productName" id="prodname" placeholder="Nombre de Producto">
 
                 <label for="pDescription"></label>
-                <textarea type="text" name="description" id="description" placeholder="Ingresa la Descripción" rows="5"></textarea>
+                <textarea type="text" name="description" id="description" placeholder="Ingresa la Descripción" rows="5" ></textarea>
 
                 <label for="pImage">Selecciona la Imagen</label>
                 <input type="file" name="pImage" id="pImage" placeholder="Selecciona la Imagen" accept="image/png, image/jpeg">
@@ -31,18 +31,16 @@
                 <label for="pPrice"></label>
                 <input type="text" name="pPrice" id="pPrice" placeholder="Ingresa el Precio">
 
-                <button type="submit">Modificar</button>
+                <button type="submit">Crear</button>
 
                 
             </form>
-
-                <a href="/products/create">¿Querés crear un producto?</a>
-            </form>
+            <a href="/products/modify">¿Querés actualizar un producto?</a>
             
         </div>
         
    </main>
    
-   <%- include('./partials/footer')  %>
+   <%- include('../partials/footer')  %>
 </body>
 </html>
