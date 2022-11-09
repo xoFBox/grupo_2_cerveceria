@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./partials/head'), style %> 
+<body>
+    <%- include('./partials/header') %>
+   
+   <main>
+        <div>
+            <h5>Actualice tu producto</h5>
+            <form action="/product/modify" method="POST">
+                <label for="pName"></label>
+                <input type="text" name="productName" id="prodname" placeholder="Nombre de Producto">
+
+                <label for="pDescription"></label>
+                <textarea type="text" name="description" id="description" placeholder="Ingresa la Descripción" rows="5"></textarea>
+
+                <label for="pImage">Selecciona la Imagen</label>
+                <input type="file" name="pImage" id="pImage" placeholder="Selecciona la Imagen" accept="image/png, image/jpeg">
+
+                <label for="pCategory"></label>
+                <select name="pCategory" id="pCategory" placeholder="Categoría">
+                    <option value="" disabled selected>Selecciona la Categoría</option>
+                    <option value="cerveza">Cerveza</option>
+                    <option value="merch">Merchandising</option>
+                    <option value="comida">Comida</option>
+                </select>
+
+                <label for="pIbu">(Solo para Cerveza)</label>
+                <input type="text" name="pIbu" id="pIbu" placeholder="Ingresa el IBU y ALC">
+                
+                <label for="pPrice"></label>
+                <input type="text" name="pPrice" id="pPrice" placeholder="Ingresa el Precio">
+
+                <button type="submit">Modificar</button>
+
+                
+            </form>
+
+                <a href="/products/create">¿Querés crear un producto?</a>
+            </form>
+            
+        </div>
+        
+   </main>
+   
+   <%- include('./partials/footer')  %>
+</body>
+</html>

@@ -10,5 +10,9 @@ productRoute.get('/detail', productController.detail)
 
 productRoute.get('/cart', productController.cart );
 
+productRoute.get('/create', productController.create );
+
+productRoute.get('/modify', productController.modifiy );
+
 
 module.exports = productRoute;
