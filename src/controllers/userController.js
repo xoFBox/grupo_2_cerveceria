@@ -1,11 +1,11 @@
 const userController = {
 
     login(req,res){
-        res.render('login', {style: '/css/login.css'});
+        res.render('users/login', {style: '/css/login.css'});
     },
 
     register(req,res){
-        res.render('register', {style: '/css/register.css'});
+        res.render('users/register', {style: '/css/register.css'});
     },
 
     loginPost(req,res){

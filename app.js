@@ -18,10 +18,6 @@ app.use('/products', productRoute);
 app.use('/user', userRoute);
 
 
-app.get('/productCart', (req, res)=>{
-    res.sendFile(path.join(__dirname + '/views/productCart.html'))
-})
-
 app.listen(3000, ()=>{
     console.log(`Servidor express escuchando puerto 3000`)
 })
