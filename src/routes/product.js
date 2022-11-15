@@ -12,7 +12,7 @@ productRoute.get('/cart', productController.cart );
 
 productRoute.get('/create', productController.create );
 
-productRoute.get('/modify', productController.modifiy );
+productRoute.get('/update', productController.update );
 
 
 module.exports = productRoute;
