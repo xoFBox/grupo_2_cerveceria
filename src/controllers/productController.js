@@ -1,6 +1,6 @@
 const productController = {
     products(req, res){
-        res.render('products', {style: '/css/products.css'});
+        res.render('products/products', {style: '/css/products.css'});
     },
 
     cart(req, res){
