@@ -18,50 +18,5 @@
     "IBU": 28,
     "ALC": 6,
     "price": 350
-  },
-  {
-    "id": 3,
-    "name": "",
-    "description": "",
-    "IBU": "",
-    "ALC": "",
-    "proce": "",
-    "image": "1.IPA.jpg"
-  },
-  {
-    "id": 4,
-    "name": "",
-    "description": "",
-    "IBU": "",
-    "ALC": "",
-    "proce": "",
-    "image": "1.IPA.jpg"
-  },
-  {
-    "id": 5,
-    "name": "",
-    "description": "",
-    "IBU": "",
-    "ALC": "",
-    "proce": "",
-    "image": "1.IPA.jpg"
-  },
-  {
-    "id": 6,
-    "name": "",
-    "description": "",
-    "IBU": "",
-    "ALC": "",
-    "proce": "",
-    "image": "1.IPA.jpg"
-  },
-  {
-    "id": 7,
-    "name": "",
-    "description": "",
-    "IBU": "",
-    "ALC": "",
-    "proce": "",
-    "image": "1.IPA.jpg"
   }
 ]
