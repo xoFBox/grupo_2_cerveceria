@@ -20,8 +20,10 @@ const productController = {
         res.render('products/productCreate', {style: '/css/productCreateMod.css'});
     },
 
-    update(req, res){
-        res.render('products/productUpdate', {style: '/css/productCreateMod.css'});
+    edit(req, res){
+        const product = allProducts.find(p=> p.id == req.params.id)
+        if (!product) return res.redirect('/')
+        res.render('products/productUpdate', {style: '/css/productCreateMod.css', product});
     },
 
     storage(req, res){
@@ -34,6 +36,18 @@ const productController = {
         fs.writeFileSync(productDbPath, JSON.stringify(allProducts, null, 2));
 
         res.redirect('/');
+    },
+
+    update(req, res){
+        const index = allProducts.findIndex(prod=> prod.id == req.params.id)
+        if( index === -1) return res.redirect('/products')
+		allProducts[index] = {
+			id: req.params.id,
+			...req.body,
+			image: req.file ? req.file.filename : allProducts[index].image
+		}
+		fs.writeFileSync(productDbPath, JSON.stringify(allProducts, null, 2))
+		res.redirect('/products')
     }
 }
 

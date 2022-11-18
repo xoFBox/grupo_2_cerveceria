@@ -27,7 +27,7 @@ productRoute.get('/cart', productController.cart );
 productRoute.get('/create', productController.create );
 productRoute.post('/create', upload.single('image'), productController.storage)
 
-productRoute.get('/update', productController.update );
-
+productRoute.get('/update/:id', productController.edit );
+productRoute.put('/update/:id', upload.single('image'), productController.update );
 
 module.exports = productRoute;
