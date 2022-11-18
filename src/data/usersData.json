@@ -1,38 +1,38 @@
 [
-    {
-        "id": "1",
-        "nombre": "Luciano",
-        "apellido": "Fazio",
-        "email": "luchofazio@gmail.com",
-        "contraseña":"abcde",
-        "category": "admin",
-        "image": "default.png"
-    },
-    {
-        "id": "2",
-        "nombre": "Gaston",
-        "apellido": "Rojas",
-        "email": "gaston.rojas.dev@gmail.com",
-        "contraseña":"12345",
-        "category": "admin",
-        "image": "default.png"
-    },
-    {
-        "id": "3",
-        "nombre": "Nahir",
-        "apellido": "",
-        "email": "",
-        "contraseña":"12345",
-        "category": "admin",
-        "image": "default.png"
-    },
-    {
-        "id": "4",
-        "nombre": "Fermin",
-        "apellido": "Bueno",
-        "email": "ferminbueno00@gmail.com",
-        "contraseña":"12345",
-        "category": "admin",
-        "image": "default.png"
-    }
+ {
+  "id": 1,
+  "firsName": "Luciano",
+  "lastName": "Fazio",
+  "email": "luchofazio@gmail.com",
+  "password": "abcde",
+  "category": "admin",
+  "image": "default.png"
+ },
+ {
+  "id": 2,
+  "firsName": "Gaston",
+  "lastName": "Rojas",
+  "email": "gaston.rojas.dev@gmail.com",
+  "password": "12345",
+  "category": "admin",
+  "image": "default.png"
+ },
+ {
+  "id": 3,
+  "firsName": "Nahir",
+  "lastName": "",
+  "email": "",
+  "password": "12345",
+  "category": "admin",
+  "image": "default.png"
+ },
+ {
+  "id": 4,
+  "firsName": "Fermin",
+  "lastName": "Bueno",
+  "email": "ferminbueno00@gmail.com",
+  "password": "12345",
+  "category": "admin",
+  "image": "default.png"
+ }
 ]
