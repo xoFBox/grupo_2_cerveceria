@@ -7,16 +7,34 @@
    <main>
     <div>
         <h5>Crea tu Cuenta</h5>
-        <form action="/login" method="POST">
-            <label for="email"></label>
-            <input type="email" name="email" id="email" placeholder="Ingresa tu email">
+        <form action="/user/register" method="POST" enctype="multipart/form-data">
+            <label for="firstName">Ingresa tu Nombre</label>
+            <input type="text" name="firstName" id="firstName" >
 
-            <label for="contraseña"></label>
-            <input type="password" name="contraseña" id="contraseña" placeholder="Ingresa tu contraseña">
+            <label for="lastName">Ingresa tu Apellido</label>
+            <input type="text" name="lastName" id="lastName" >
 
-            <label for="contraseña"></label>
-            <input type="password" name="contraseña" id="confirmcontraseña" placeholder="Repetí tu contraseña">
+            <label for="email">Ingresa tu email</label>
+            <input type="email" name="email" id="email" >
 
+            <label for="contraseña">Ingresa tu contraseña</label>
+            <input type="password" name="password" id="password" >
+
+            <label for="contraseña">Repetí tu contraseña</label>
+            <input type="password" name="confirmPassword" id="confirmPassword" >
+
+            <label for="image">Elige tu Foto de Perfil</label>
+            <input type="file" name="image" id="image" >
+
+            <label>Categoria</label>
+            <select name="category">
+                <option hidden value=""></option>
+                <option value="cliente">cliente</option>
+                <option value="admin">admin</option>
+                <option value="empleado">empleado</option>
+                <option value="proveedores">proveedores</option>
+            </select>
+            
             <button type="submit">Enviar</button>
         </form>
         <a href="/user/login">¿Ya estas registrado?</a>

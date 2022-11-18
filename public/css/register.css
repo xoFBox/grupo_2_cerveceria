@@ -12,7 +12,7 @@ main div{
     display: flex;
     background-color: whitesmoke;
     width: 100%;
-    height: 450px;
+    height: 750px;
     max-width: 400px;
     align-items: center;
     flex-direction: column;
@@ -27,6 +27,7 @@ main div{
 main h5{
     font-family: 'Roboto Condensed', sans-serif;
     font-size: 25px;
+    margin-bottom: 10px;
 }
 
 main form{
@@ -36,11 +37,16 @@ main form{
     flex-direction: column;
 }
 
-main button, input{
+main button, input, select{
     font-family: inherit;
     font-size: 100%;
     height: 30px;
-    margin: 20px;
+    margin: 10px;
+}
+
+main label{
+    margin-top: 5px;
+    margin-left: 15px;
 }
 
 main input:invalid{
