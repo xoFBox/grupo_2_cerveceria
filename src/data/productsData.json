@@ -1,22 +1,22 @@
 [
-    {
-        "id": 1,
-        "name": "IPA",
-        "description": "Altisima birra",
-        "image": "1.IPA.jpg",
-        "category": "cerveza",
-        "IBU": 47,
-        "ALC": 6,
-        "price": 350
-    },
-    {
-        "id": 2,
-        "name": "APA",
-        "description": "Mejor que la birra de arriba",
-        "image": "2.APA.jpg",
-        "category": "cerveza",
-        "IBU": 28,
-        "ALC": 6,
-        "price": 350
-    }
+  {
+    "id": 1,
+    "name": "IPA",
+    "description": "Altisima birra",
+    "image": "1.IPA.jpg",
+    "category": "cerveza",
+    "IBU": 47,
+    "ALC": 6,
+    "price": 350
+  },
+  {
+    "id": 2,
+    "name": "APA",
+    "description": "Mejor que la birra de arriba",
+    "image": "2.APA.jpg",
+    "category": "cerveza",
+    "IBU": 28,
+    "ALC": 6,
+    "price": 350
+  }
 ]

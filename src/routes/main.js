@@ -6,5 +6,4 @@ const mainRoute = new Router();
 
 mainRoute.get('/', mainController.index)
 
-
 module.exports = mainRoute;
