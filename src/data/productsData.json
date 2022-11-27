@@ -12,11 +12,67 @@
   {
     "id": 2,
     "name": "APA",
-    "description": "Mejor que la birra de arriba",
+    "description": "Una cerveza americana moderna adaptada de las Ales Pálidas Inglesas. Una Ale de color dorado pálido a ámbar ligero, refrescante y lupulada, todavía con suficiente soporte de malta para hacer la cerveza balanceada y bebible",
     "image": "2.APA.jpg",
     "category": "cerveza",
     "IBU": 28,
     "ALC": 6,
     "price": 350
+  },
+  {
+    "id": 3,
+    "name": "Dorada Pampeana",
+    "description": "De fermentación alta, elaborada con maltas y lúpulos nacionales. De color ámbar, con buena espuma blanca y cremosa. Se percibe aromas cítricos a los que se añaden los otorgados por la malta. La sensación en boca es fresca, donde están presentes las notas florales del lúpulo.",
+    "image": "4.DoradaPampeana.jpg",
+    "category": "cerveza",
+    "IBU": 12,
+    "ALC": 5.7,
+    "price": 350
+  },
+  {
+    "id": 5,
+    "name": "Bohemian Pils",
+    "description": "Es una cerveza que respeta de manera excepcional este estilo, con un proceso de macerado de sus maltas y lúpulo patagónico que origina un color dorado brillante, gran cuerpo y un amargor equilibrado. Es ideal para acompañar carnes blancas.",
+    "image": "6.BohemianPils.jpg",
+    "category": "cerveza",
+    "IBU": 25,
+    "ALC": 4.5,
+    "price": 350
+  },
+  {
+    "id": 6,
+    "name": "IPL",
+    "description": "Cerveza lupulada de amargor medio, color dorado y de fermentación Lager. Este estilo americano denominado India Pale Lager es un híbrido, de las famosas IPAs pero con la impronta de una fermentación más limpia la cual brinda una sensación en la boca muy balanceada.",
+    "image": "7.IPL.jpg",
+    "category": "cerveza",
+    "IBU": 47,
+    "ALC": 5.5,
+    "price": 350
+  },
+  {
+    "id": 7,
+    "name": "Scotish",
+    "description": "Se caracteriza por un pronunciado carácter malteado, amargor leve y una terminación ligeramente dulce, contenido alcohólico medio, buen cuerpo y excelente sabor.",
+    "image": "8.Scotish.jpg",
+    "category": "cerveza",
+    "IBU": 8,
+    "ALC": 5.8,
+    "price": 350
+  },
+  {
+    "id": 8,
+    "name": "Para picar",
+    "description": "tabla para picar, con muzzarelitas, pollitos crispy, papas fritas, buñuelos de acelga, aros de cebolla y milanesitas con dips de alioli, bbq y sweet chili.",
+    "image": "ParaPicar.jpg",
+    "category": "comida",
+    "price": 1300
+  },
+  {
+    "id": 9,
+    "name": "Botellon",
+    "description": "Llevate tu botellon y recargalo con la cerveza que mas te guste",
+    "image": "Botellon.jpg",
+    "category": "cerveza",
+    "price": 900
   }
 ]
