@@ -6,8 +6,42 @@
 <main>
     <section>
         <div class="details-imgarticle">
+         <% for(i=0; i<allProducts.length; i++){ %> 
           <article>
-            <div class="details-descripcion">
+            <div class="id"><%=allProducts[i].id  %></div>
+               <div class="details-descripcion">
+                  <h4>  <%=allProducts[i].name %></h4>
+                  <p>ALC: <%=allProducts[i].ALC %> / IBU <%=allProducts[i].IBU %> </p>
+               </div>
+                <img src="/images/products/<%=allProducts[i].image %>" alt="<%=allProducts[i].name %>" width="100%">
+                <p><%=allProducts[i].prize %></p>
+                <div class="details-unidades-carrito">
+                  <div>
+                     <form action="/cantidad" method="GET">
+                         <label>Unidades</label>
+                         <select name="unidades">
+                         <option value="1">1</option>
+                         <option value="2">2</option>
+                         <option value="3">3</option>
+                         <option value="4">4</option>
+                         <option value="5">5</option>
+                         <option value="6">6</option>
+                         <option value="7">7</option>
+                         <option value="8">8</option>
+                         <option value="9">9</option>
+                         <option value="10">10</option>
+                         </select>
+                        </form>    
+                  </div>
+                  <div>
+                     <i class="fas fa-shopping-cart"></i>
+                     <input type="submit" value="Agregar al carrito">
+                  </div>
+                  </div>
+               </article>
+               <% } %>
+               <article>
+               <div class="details-descripcion">
                <h4>IPA</h4>
                <p>ALC: 6% / IBU 47</p>
             </div>

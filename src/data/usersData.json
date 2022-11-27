@@ -20,8 +20,8 @@
  {
   "id": 3,
   "firsName": "Nahir",
-  "lastName": "",
-  "email": "",
+  "lastName": "Abraham",
+  "email": "nahirkabraham@gmail.com",
   "password": "12345",
   "category": "admin",
   "image": "default.png"

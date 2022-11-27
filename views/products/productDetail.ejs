@@ -7,12 +7,13 @@
     <section>
         <div class="details-imgarticle">
           <article>
+            <div class= id ><%=showProduct.id %> </div>
             <div class="details-descripcion">
-               <h4>IPA</h4>
-               <p>ALC: 6% / IBU 47</p>
+               <h4><%=showProduct.name  %> </h4>
+               <p>ALC <%=showProduct.ALC %> / IBU <%= showProduct.IBU %></p>
             </div>
-             <img src="/images/1.IPA.jpg" alt="IPA" width="100%">
-             <p>$350</p>
+             <img src="/images/<%=showProduct.image %>" alt="<%=showProduct.name  %>" width="100%">
+             <p><%=showProduct.prize %></p>
              <div class="details-unidades-carrito">
              <div>
                 <form action="/cantidad" method="GET">
@@ -36,7 +37,7 @@
                 <input type="submit" value="Agregar al carrito">
              </div>
              </div>
-             <p>Las IPA se caracterizan por ser cervezas de alta graduación alcohólica (entre 5º y 7º), tener una mayor cantidad de lúpulo y por lo tanto un amargor (a partir normalmente de los 40 IBUs) y aroma intensos y cierta complejidad en el paladar.</p>
+             <p><%=showProduct.description %></p>
           </article>
         </div> 
     </section>

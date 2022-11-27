@@ -5,7 +5,7 @@ const allProducts = JSON.parse(fs.readFileSync( productDbPath, 'utf-8'))
 
 const productController = {
     products(req, res){
-        res.render('products/products', {style: '/css/products.css'});
+        res.render('products/products', {style: '/css/products.css', allProducts} );
     },
 
     cart(req, res){
@@ -13,7 +13,8 @@ const productController = {
     },
 
     detail(req, res){
-        res.render('products/productDetail', {style: '/css/products.css'})
+        var showProduct = allProducts.find(product =>  product.id == req.params.id);
+        res.render('products/productDetail', {style: '/css/products.css', showProduct});
     },
     
     create(req, res){
