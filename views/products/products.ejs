@@ -11,7 +11,9 @@
             <div class="id"><%=allProducts[i].id  %></div>
                <div class="details-descripcion">
                   <h4>  <%=allProducts[i].name %></h4>
+                  <% if (allProducts[i].category == "cerveza") { %>
                   <p>ALC: <%=allProducts[i].ALC %> / IBU <%=allProducts[i].IBU %> </p>
+               <% } %>
                </div>
                 <img src="/images/products/<%=allProducts[i].image %>" alt="<%=allProducts[i].name %>" width="100%">
                 <p>$ <%=allProducts[i].price %></p>
