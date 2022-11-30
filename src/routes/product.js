@@ -30,4 +30,6 @@ productRoute.post('/create', upload.single('image'), productController.storage)
 productRoute.get('/update/:id', productController.edit );
 productRoute.put('/update/:id', upload.single('image'), productController.update );
 
+productRoute.delete('/delete/:id', productController.destroy );
+
 module.exports = productRoute;

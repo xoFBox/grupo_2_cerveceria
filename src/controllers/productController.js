@@ -49,7 +49,13 @@ const productController = {
 		}
 		fs.writeFileSync(productDbPath, JSON.stringify(allProducts, null, 2))
 		res.redirect('/products')
-    }
+    },
+    destroy : (req, res) => {
+		let index = allProducts.indexOf(prod => prod.id == req.params.id) +1
+		allProducts.splice(index, 1);
+		fs.writeFileSync(productDbPath, JSON.stringify(allProducts, null, " "))
+		res.redirect('/')
+	}
 }
 
 module.exports = productController;
