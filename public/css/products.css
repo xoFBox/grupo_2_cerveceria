@@ -106,7 +106,7 @@ label, article i {
     padding-bottom: 10px;
 }
 
-.details-unidades-carrito input {
+.details-unidades-carrito input, button {
     background-color: green;
     color: white;
     padding: 4px;
