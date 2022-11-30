@@ -28,6 +28,20 @@ header{
     font-size: 20px;
  }
 
+ header div a{
+    font-size: 20px;
+    margin: 12px;
+ }
+
+ header nav a {
+    font-size: 16px;
+ }
+
+ header div {
+    width: 15%;
+    display: flex;
+ }
+
  main{
     margin-top: 80px;
  }

@@ -13,7 +13,7 @@ main div{
     display: flex;
     background-color: whitesmoke;
     width: 100%;
-    height: 400px;
+    height: 420px;
     max-width: 400px;
     align-items: center;
     flex-direction: column;
@@ -51,6 +51,11 @@ main input:invalid{
 main button{
     align-self: center;
     width: 40%;
+}
+
+main label{
+    align-self: center;
+    margin-left: 15px;
 }
 
 main a{

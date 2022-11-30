@@ -6,6 +6,7 @@ const methodOverride = require('method-override')
 const mainRoute = require('./src/routes/main')
 const productRoute = require('./src/routes/product')
 const userRoute = require('./src/routes/user')
+const cookieParser = require('cookie-parser')
 
 const app = express()
 
@@ -14,7 +15,7 @@ app.use(express.json())
 app.use(express.urlencoded({extended: false}))
 app.use(express.static('public'))
 app.set('view engine', 'ejs')
-
+app.use(cookieParser())
 
 // Rutas
 

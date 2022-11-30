@@ -1,37 +1,37 @@
 [
  {
   "id": 1,
-  "firsName": "Luciano",
-  "lastName": "Fazio",
-  "email": "luchofazio@gmail.com",
-  "password": "abcde",
+  "firstName": "Fermin",
+  "lastName": "Bueno",
+  "email": "minchofb14@gmail.com",
+  "password": "$2a$10$d/kfKzmtQIVF29sHyBUp3.RSREeM39sYq1Tr3jxOT6tVUxeGL753u",
   "category": "admin",
   "image": "default.png"
  },
  {
   "id": 2,
-  "firsName": "Gaston",
-  "lastName": "Rojas",
-  "email": "gaston.rojas.dev@gmail.com",
-  "password": "12345",
+  "firstName": "Nahir",
+  "lastName": "Abraham",
+  "email": "nahirkabraham@gmail.com",
+  "password": "$2a$10$DqYj3KVikvPc93r4vcZIg./cSrw7Y6.QqIFPTN.YK0kA7tz8IB7P.",
   "category": "admin",
   "image": "default.png"
  },
  {
   "id": 3,
-  "firsName": "Nahir",
-  "lastName": "Abraham",
-  "email": "nahirkabraham@gmail.com",
-  "password": "12345",
+  "firstName": "Gaston",
+  "lastName": "Rojas",
+  "email": "gaston.rojas.dev@gmail.com",
+  "password": "$2a$10$BHpGS8Mc2.lklUU2b80.S.g./Q4hSolA1UeBxP2w9w6g8qZBNpXmy",
   "category": "admin",
   "image": "default.png"
  },
  {
   "id": 4,
-  "firsName": "Fermin",
-  "lastName": "Bueno",
-  "email": "ferminbueno00@gmail.com",
-  "password": "12345",
+  "firstName": "Luciano",
+  "lastName": "Fazio",
+  "email": "luchofazio@gmail.com",
+  "password": "$2a$10$YgvCqcOH1.wCv.wnz8nLNusPEWV2KMx.ip.IfASaFe08EhJFkNQI.",
   "category": "admin",
   "image": "default.png"
  }
