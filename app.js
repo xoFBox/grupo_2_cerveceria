@@ -2,6 +2,7 @@ const exp = require('constants')
 const express = require('express')
 const path = require('path')
 const methodOverride = require('method-override')
+const session = require('express-session')
 
 const mainRoute = require('./src/routes/main')
 const productRoute = require('./src/routes/product')
@@ -16,6 +17,11 @@ app.use(express.urlencoded({extended: false}))
 app.use(express.static('public'))
 app.set('view engine', 'ejs')
 app.use(cookieParser())
+app.use(session({
+    secret: 'shhh', 
+    resave: false,
+    saveUninitialized: false,
+}))
 
 // Rutas
 
