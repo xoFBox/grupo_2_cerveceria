@@ -12,14 +12,16 @@ const userController = {
     },
 
     loginPost(req,res){
-
+        
         let found = allUsers.find(user => user.email == req.body.email)
+
         if(found && bcrypt.compareSync(req.body.password, found.password)){
-            //se logueo
+            delete found.password
+            req.session.user = found;
             res.redirect('/')
         } else {
             //no se logueo
-            res.redirect('/user/login')
+            res.render('users/login', {style: '/css/login.css', userNotFound: true})
         }
        
     },
@@ -30,17 +32,31 @@ const userController = {
 
     registerPost(req,res){
         // Se borra hasta que se valide la contraseña
-        delete req.body.confirmPassword;
+        
+        delete req.body.confirmPassword;    
 
-        allUsers.push({
-            id: allUsers[allUsers.length-1].id +1,
-            ...req.body,
-            password: bcrypt.hashSync(req.body.password, 10),
-            image: req.file ? req.file.orginialname : 'default.png'
-        })
+        const found = allUsers.find(user => req.body.email == user.email)
+      
+        if(found){
+            res.render('users/register',{style: '/css/register.css', emailNotAvailable: true})
+        } else{
+            const newUser = {
+                id: allUsers[allUsers.length-1].id +1,
+                ...req.body,
+                password: bcrypt.hashSync(req.body.password, 10),
+                image: req.file ? req.file.orginialname : 'default.png'
+            }
+            allUsers.push(newUser)
+    
+            fs.writeFileSync(userDbPath, JSON.stringify(allUsers, null, ' '));
 
-        fs.writeFileSync(userDbPath, JSON.stringify(allUsers, null, ' '));
-        res.redirect('/');
+            delete newUser.password
+
+            req.session.user = newUser
+            
+            res.redirect('/');
+        }
+
     }
 }
 

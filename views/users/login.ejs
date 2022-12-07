@@ -10,7 +10,9 @@
             <form action="/user/login" method="POST">
                 <label for="email"></label>
                 <input type="email" name="email" id="email" placeholder="Ingresa tu email">
-
+                <% if(locals.userNotFound && userNotFound === true) { %> 
+                    <p style="color: red;"> Datos incorrectos </p>
+                <% } %> 
                 <label for="contraseña"></label>
                 <input type="password" name="password" id="password" placeholder="Ingresa tu contraseña">
 
