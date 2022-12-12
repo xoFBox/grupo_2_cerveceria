@@ -17,12 +17,25 @@ const upload = multer({ storage });
 
 const userRoute = new Router();
 
-userRoute.get('/login', userController.login)
+const userLogued = require('../middlewares/userLogued');
+
+const userUnknow = require('../middlewares/userUnknow');
+
+
+userRoute.get('/login',  userLogued, userController.login)
 
 userRoute.post('/login', userController.loginPost)
 
-userRoute.get('/register', userController.register)
+userRoute.get('/register', userLogued, userController.register)
 
 userRoute.post('/register', upload.single('image'), userController.registerPost)
+
+userRoute.get('/profile', userUnknow, userController.profile)
+
+userRoute.post('/profile', userController.profile)
+
+userRoute.get('/edit', userUnknow, userController.edit)
+
+userRoute.get('/logout', userController.logout)
 
 module.exports = userRoute;

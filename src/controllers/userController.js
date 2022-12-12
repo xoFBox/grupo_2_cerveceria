@@ -16,9 +16,9 @@ const userController = {
         let found = allUsers.find(user => user.email == req.body.email)
 
         if(found && bcrypt.compareSync(req.body.password, found.password)){
-            delete found.password
+            delete found.password;
             req.session.user = found;
-            res.redirect('/')
+            res.redirect('/user/profile')
         } else {
             //no se logueo
             res.render('users/login', {style: '/css/login.css', userNotFound: true})
@@ -57,6 +57,19 @@ const userController = {
             res.redirect('/');
         }
 
+    },
+
+    profile(req, res){
+        res.render('users/profile', {style: '/css/profile.css', usuario: req.session.user});
+    },
+
+    edit(req, res){
+        res.render('users/profileEdit', {style: '/css/register.css'})
+    },
+
+    logout(req, res){
+        req.session.destroy();
+        res.redirect('/')
     }
 }
 

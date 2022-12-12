@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('../partials/head'), style %> 
+<body>
+    <%- include('../partials/header') %>
+
+   <main>
+    <div>
+        <h5>Edita tus datos</h5>
+        <form action="/user/register" method="POST" enctype="multipart/form-data">
+            <label for="firstName">Ingresa tu Nombre</label>
+            <input type="text" name="firstName" id="firstName" >
+
+            <label for="lastName">Ingresa tu Apellido</label>
+            <input type="text" name="lastName" id="lastName" >
+
+            <label for="email">Ingresa tu email</label>
+            <input type="email" name="email" id="email" >
+            <% if (locals.emailNotAvailable && emailNotAvailable == true) { %>
+                <p style="color: red;"> Ese email ya se encuentra registrado</p>
+            <% } %> 
+
+         
+            <label for="image">Elige tu Foto de Perfil</label>
+            <input type="file" name="image" id="image" >
+
+            <label>Categoria</label>
+            <select name="category">
+                <option hidden value=""></option>
+                <option value="cliente">cliente</option>
+                <option value="admin">admin</option>
+                <option value="empleado">empleado</option>
+                <option value="proveedores">proveedores</option>
+            </select>
+            
+            <button type="submit">Enviar</button>
+        </form>
+        
+    </div>
+    
+</main>
+
+    <%- include('../partials/footer')  %>
+</body>
+</html>

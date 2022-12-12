@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('../partials/head'), style%>
+<body>
+    <%- include('../partials/header') %>
+    <section>
+        <h2> Bienvenido a tu perfil <%= usuario.firstName %>  </h2>
+        <br>
+        <img class="image" src="/images/users/<%= usuario.image %>">
+        <br>
+        <h3>Tus datos </h3>
+        <div class="firstName"> Nombre: <%= usuario.firstName %></div>
+        <div class="lastName">Apellido: <%= usuario.lastName %></div>
+        <div class="email"> Email: <%= usuario.email %></div>
+        <div class="category"> Categoría: <%= usuario.category %> </div>
+        <br>
+        <a href="/user/edit" ><button type="sumit">Editar</button></a>
+    </section>
+    <%- include('../partials/footer') %> 
+</body>
+</html>
