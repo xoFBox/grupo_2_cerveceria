@@ -34,5 +34,30 @@
   "password": "$2a$10$YgvCqcOH1.wCv.wnz8nLNusPEWV2KMx.ip.IfASaFe08EhJFkNQI.",
   "category": "admin",
   "image": "default.png"
+ },
+ {
+  "id": 5,
+  "firstName": "Cosme",
+  "lastName": "Fulanito",
+  "email": "cosmefulanito@mail.com",
+  "password": "$2a$10$bE81SofCpBMSM7YBeJdt4eZ8ABrcSvTIABSH4Uwy8uudVEPMqjGga",
+  "category": "cliente"
+ },
+ {
+  "id": 6,
+  "firstName": "cosme",
+  "lastName": "fulanito 2",
+  "email": "mal@mail.com",
+  "password": "$2a$10$9DUN1fCl/56/dQSH0.RbZeex7mpgp0TEht1R1..v3QVClzijYmXWq",
+  "category": "cliente"
+ },
+ {
+  "id": 7,
+  "firstName": "cosme",
+  "lastName": "Fulanito 3",
+  "email": "mail@mail.com",
+  "password": "$2a$10$6429Roak9DJO//WghN7LNeadM8E/vt15kn/r9/FrQdSxmtvNaJU0u",
+  "category": "empleado",
+  "image": "pelota.jpg"
  }
 ]

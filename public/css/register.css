@@ -45,7 +45,7 @@ main button, input, select{
 }
 
 main label{
-    margin-top: 5px;
+    
     margin-left: 15px;
 }
 
@@ -60,6 +60,11 @@ main button{
 
 main a{
     color: blue;
+}
+
+main p{
+    color: red;
+    margin-left: 15px;
 }
 
 

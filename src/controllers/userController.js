@@ -3,7 +3,7 @@ const path = require('path');
 const userDbPath = path.join(__dirname, "../data/usersData.json");
 const allUsers = JSON.parse(fs.readFileSync(userDbPath, 'utf-8'));
 const bcrypt = require('bcryptjs');
-
+const { validationResult } = require('express-validator');
 
 const userController = {
 
@@ -31,9 +31,15 @@ const userController = {
     },
 
     registerPost(req,res){
-        // Se borra hasta que se valide la contraseña
-        
-        delete req.body.confirmPassword;    
+        const resultValidation = validationResult(req);
+        if(resultValidation.errors.length > 0) {
+            return res.render('users/register', {
+                errors: resultValidation.mapped(),
+                style: '/css/register.css',
+                oldData: req.body
+            });
+        } else {
+            delete req.body.confirmPassword;    
 
         const found = allUsers.find(user => req.body.email == user.email)
       
@@ -44,7 +50,7 @@ const userController = {
                 id: allUsers[allUsers.length-1].id +1,
                 ...req.body,
                 password: bcrypt.hashSync(req.body.password, 10),
-                image: req.file ? req.file.orginialname : 'default.png'
+                image: req.file.filename
             }
             allUsers.push(newUser)
     
@@ -56,7 +62,7 @@ const userController = {
             
             res.redirect('/');
         }
-
+        }
     },
 
     profile(req, res){
@@ -64,7 +70,7 @@ const userController = {
     },
 
     edit(req, res){
-        res.render('users/profileEdit', {style: '/css/register.css'})
+        res.render('users/profileEdit', {style: '/css/register.css',  usuario: req.session.user});
     },
 
     logout(req, res){
