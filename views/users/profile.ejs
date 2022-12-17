@@ -4,15 +4,15 @@
 <body>
     <%- include('../partials/header') %>
     <section>
-        <h2> Bienvenido a tu perfil <%= usuario.firstName %>  </h2>
+        <h2> Bienvenido a tu perfil <%= locals.user.firstName %>  </h2>
         <br>
-        <img class="image" src="/images/users/<%= usuario.image %>">
+        <img class="image" src="/images/users/<%= locals.user.image %>">
         <br>
         <h3>Tus datos </h3>
-        <div class="firstName"> Nombre: <%= usuario.firstName %></div>
-        <div class="lastName">Apellido: <%= usuario.lastName %></div>
-        <div class="email"> Email: <%= usuario.email %></div>
-        <div class="category"> Categoría: <%= usuario.category %> </div>
+        <div class="firstName"> Nombre: <%= locals.user.firstName %></div>
+        <div class="lastName">Apellido: <%= locals.user.lastName %></div>
+        <div class="email"> Email: <%= locals.user.email %></div>
+        <div class="category"> Categoría: <%= locals.user.category %> </div>
         <br>
         <a href="/user/edit" ><button type="sumit">Editar</button></a>
     </section>

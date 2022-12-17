@@ -16,8 +16,15 @@ const userController = {
         let found = allUsers.find(user => user.email == req.body.email)
 
         if(found && bcrypt.compareSync(req.body.password, found.password)){
-            delete found.password;
+
+            // aqui se ocultaria la password de 'found'
+
             req.session.user = found;
+            
+            if(req.body.recordame){
+                res.cookie('user' ,req.session.user, {maxAge : 1000*30})
+            }
+
             res.redirect('/user/profile')
         } else {
             //no se logueo
@@ -42,7 +49,13 @@ const userController = {
             delete req.body.confirmPassword;    
 
         const found = allUsers.find(user => req.body.email == user.email)
-      
+        
+        if(!req.file.filename){
+            let nombreImagen = "default.png"
+        } else {
+            let nombreImagen = req.file.filename
+        }
+
         if(found){
             res.render('users/register',{style: '/css/register.css', emailNotAvailable: true})
         } else{
@@ -50,7 +63,7 @@ const userController = {
                 id: allUsers[allUsers.length-1].id +1,
                 ...req.body,
                 password: bcrypt.hashSync(req.body.password, 10),
-                image: req.file.filename
+                image: nombreImagen
             }
             allUsers.push(newUser)
     
@@ -66,14 +79,15 @@ const userController = {
     },
 
     profile(req, res){
-        res.render('users/profile', {style: '/css/profile.css', usuario: req.session.user});
+        res.render('users/profile', {style: '/css/profile.css'});
     },
 
     edit(req, res){
-        res.render('users/profileEdit', {style: '/css/register.css',  usuario: req.session.user});
+        res.render('users/profileEdit', {style: '/css/register.css'});
     },
 
     logout(req, res){
+        res.clearCookie('user')
         req.session.destroy();
         res.redirect('/')
     }

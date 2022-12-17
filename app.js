@@ -7,7 +7,8 @@ const session = require('express-session')
 const mainRoute = require('./src/routes/main')
 const productRoute = require('./src/routes/product')
 const userRoute = require('./src/routes/user')
-const cookieParser = require('cookie-parser')
+const cookies = require('cookie-parser')
+const userLogueado = require('./src/middlewares/userLoguedo')
 
 const app = express()
 
@@ -16,12 +17,14 @@ app.use(express.json())
 app.use(express.urlencoded({extended: false}))
 app.use(express.static('public'))
 app.set('view engine', 'ejs')
-app.use(cookieParser())
+
 app.use(session({
     secret: 'shhh', 
     resave: false,
     saveUninitialized: false,
 }))
+app.use(cookies())
+app.use(userLogueado)
 
 // Rutas
 

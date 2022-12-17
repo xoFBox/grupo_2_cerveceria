@@ -9,13 +9,13 @@
         <h5>Edita tus datos</h5>
         <form action="/user/register" method="POST" enctype="multipart/form-data">
             <label for="firstName">Ingresa tu Nombre</label>
-            <input type="text" name="firstName" id="firstName" >
+            <input type="text" name="firstName" id="firstName" placeholder="<%= locals.user.firstName  %> ">
 
             <label for="lastName">Ingresa tu Apellido</label>
-            <input type="text" name="lastName" id="lastName" >
+            <input type="text" name="lastName" id="lastName" placeholder="<%= locals.user.lastName  %>">
 
             <label for="email">Ingresa tu email</label>
-            <input type="email" name="email" id="email" >
+            <input type="email" name="email" id="email" placeholder="<%= locals.user.email  %>">
             <% if (locals.emailNotAvailable && emailNotAvailable == true) { %>
                 <p style="color: red;"> Ese email ya se encuentra registrado</p>
             <% } %> 
