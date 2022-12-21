@@ -1,23 +1,17 @@
 [
  {
   "id": 1,
-  "name": "IPA",
-  "description": "Las IPA se caracterizan por ser cervezas de alta graduación alcohólica (entre 5º y 7º), tener una mayor cantidad de lúpulo y por lo tanto un amargor (a partir normalmente de los 40 IBUs) y aroma intensos y cierta complejidad en el paladar.",
-  "image": "1.IPA.jpg",
-  "category": "cerveza",
-  "IBU": 47,
-  "ALC": 6,
-  "price": 350
+  "image": "1.IPA.jpg"
  },
  {
-  "id": 2,
+  "id": "2",
   "name": "APA",
-  "description": "Una cerveza americana moderna adaptada de las Ales Pálidas Inglesas. Una Ale de color dorado pálido a ámbar ligero, refrescante y lupulada, todavía con suficiente soporte de malta para hacer la cerveza balanceada y bebible",
+  "description": "Esto es una APA",
   "image": "2.APA.jpg",
   "category": "cerveza",
-  "IBU": 28,
-  "ALC": 6,
-  "price": 350
+  "IBU": "28",
+  "ALC": "6",
+  "price": "350"
  },
  {
   "id": 3,
@@ -31,13 +25,7 @@
  },
  {
   "id": 5,
-  "name": "Bohemian Pils",
-  "description": "Es una cerveza que respeta de manera excepcional este estilo, con un proceso de macerado de sus maltas y lúpulo patagónico que origina un color dorado brillante, gran cuerpo y un amargor equilibrado. Es ideal para acompañar carnes blancas.",
-  "image": "6.BohemianPils.jpg",
-  "category": "cerveza",
-  "IBU": 25,
-  "ALC": 4.5,
-  "price": 350
+  "image": "6.BohemianPils.jpg"
  },
  {
   "id": 6,

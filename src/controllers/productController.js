@@ -51,9 +51,9 @@ const productController = {
 		res.redirect('/products')
     },
     destroy : (req, res) => {
-		let index = allProducts.indexOf(prod => prod.id == req.params.id) +1
-		allProducts.splice(index, 1);
-		fs.writeFileSync(productDbPath, JSON.stringify(allProducts, null, " "))
+        
+		let newProducts = allProducts.filter(prod => prod.id != req.params.id)
+		fs.writeFileSync(productDbPath, JSON.stringify(newProducts, null, " "))
 		res.redirect('/')
 	}
 }

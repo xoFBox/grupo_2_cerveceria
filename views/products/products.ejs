@@ -4,7 +4,11 @@
 <body>
     <%- include('../partials/header') %>
 <main>
+    
     <section>
+        <form action="/products/create" method="GET" >
+            <button type="submit" class="action-button">CREAR PRODUCTO</button>
+        </form>
         <div class="details-imgarticle">
          <% for(i=0; i<allProducts.length; i++){ %> 
           <article>

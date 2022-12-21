@@ -113,6 +113,12 @@ label, article i {
     border-radius: 4px;
 }
 
+.action-button {
+    margin:auto;
+    padding: 15px;
+    position: relative;
+    text-align: center;
+}
 
 @media (min-width: 769px){
     header i {
@@ -209,5 +215,6 @@ label, article i {
     .id {
         display: none;
     }
+    
 
 }

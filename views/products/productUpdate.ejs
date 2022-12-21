@@ -9,30 +9,29 @@
             <h5>Actualice tu producto</h5>
             <form action="/products/update/<%= product.id %>?_method=PUT" method="POST">
                 <label for="name"></label>
-                <input type="text" name="name" id="name" placeholder="Nombre de Producto">
+                <input type="text" name="name" id="name" value="<%= product.name%>">
 
                 <label for="description"></label>
-                <textarea type="text" name="description" id="description" placeholder="Ingresa la Descripción" rows="5"></textarea>
+                <textarea type="text" name="description" id="description" value="<%= product.description%>" rows="5"></textarea>
 
                 <label for="image">Selecciona la Imagen</label>
-                <input type="file" name="image" id="image" placeholder="Selecciona la Imagen" accept="image/png, image/jpeg">
+                <input type="file" name="image" id="image" value="<%= product.image%>" accept="image/png, image/jpeg">
 
                 <label for="category"></label>
-                <select name="category" id=" category" placeholder="Categoría">
-                    <option value="" disabled selected>Selecciona la Categoría</option>
+                <select name="category" id=" category" selected="<%= product.category%>">
                     <option value="cerveza">Cerveza</option>
                     <option value="merch">Merchandising</option>
                     <option value="comida">Comida</option>
                 </select>
 
                 <label for="IBU">(Solo para Cerveza)</label>
-                <input type="text" name="IBU" id="IBU" placeholder="Ingresa el IBU">
+                <input type="text" name="IBU" id="IBU" value="<%= product.IBU%>">
 
                 <label for="ALC">(Solo para Cerveza)</label>
-                <input type="text" name="ALC" id="ALC" placeholder="Ingresa el ALC">
+                <input type="text" name="ALC" id="ALC" value="<%= product.ALC%>">
                 
                 <label for="price"></label>
-                <input type="text" name="price" id="price" placeholder="Ingresa el Precio">
+                <input type="text" name="price" id="price" value="<%= product.price%>">
 
                 <button type="submit">Modificar</button>
 
