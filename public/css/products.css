@@ -118,7 +118,20 @@ label, article i {
     padding: 15px;
     position: relative;
     text-align: center;
+    transition: all 400ms;
 }
+
+.action-button:hover {
+    box-shadow: 0px 0px 25px 15px rgba(255,215,0,0.75);
+        -webkit-box-shadow: 0px -1px 25px 15px rgba(255,215,0,0.75);
+        -moz-box-shadow: 0px 0px 25px 15px rgba(255,215,0,0.75);
+}
+
+.button-create-product {
+    text-align: center;
+    padding: 15px;
+}
+
 
 @media (min-width: 769px){
     header i {
