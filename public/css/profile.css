@@ -29,6 +29,7 @@ section{
 }
 
 .image {
+    width: 100%;
     border-style:solid;
     border-color: whitesmoke;
     border-radius: 20px;

@@ -22,7 +22,7 @@ const userController = {
             req.session.user = found;
             
             if(req.body.recordame){
-                res.cookie('user' ,req.session.user, {maxAge : 1000*30})
+                res.cookie('user' ,req.session.user, {maxAge : (1000*60)*2})
             }
 
             res.redirect('/user/profile')
@@ -50,15 +50,14 @@ const userController = {
 
         const found = allUsers.find(user => req.body.email == user.email)
         
-        if(!req.file.filename){
-            let nombreImagen = "default.png"
-        } else {
-            let nombreImagen = req.file.filename
-        }
-
         if(found){
             res.render('users/register',{style: '/css/register.css', emailNotAvailable: true})
         } else{
+            let nombreImagen = "default.png"
+            if(req.file.filename){
+                nombreImagen = req.file.filename
+            }   
+
             const newUser = {
                 id: allUsers[allUsers.length-1].id +1,
                 ...req.body,
