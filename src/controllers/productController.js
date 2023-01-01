@@ -8,6 +8,10 @@ const productController = {
         res.render('products/products', {style: '/css/products.css', allProducts} );
     },
 
+    comidas(req, res){
+        res.render('products/comidas', {style: '/css/products.css', allProducts} );
+    },
+
     cart(req, res){
         res.render('products/productCart', {style: '/css/productCart.css'});
     },

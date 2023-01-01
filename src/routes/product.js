@@ -20,6 +20,8 @@ const upload = multer({storage});
 
 productRoute.get('/', productController.products);
 
+productRoute.get('/comidas', productController.comidas);
+
 productRoute.get('/detail/:id', productController.detail)
 
 productRoute.get('/cart', productController.cart );
