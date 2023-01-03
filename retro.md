@@ -56,3 +56,23 @@ Seguir mejorando en la optimizacion del tiempo. Mejoramos mucho en la planificac
 4) Que deberiamos dejar de hacer?
 
 Creemos que el punto flojo de este sprint que si bien fue muy positivo, fueron los tiempos, y sacamos la conclucion que fue particularmente por este sprint. Pondremos foco en los tiempos para el siguiente sprint.
+
+
+==================================================
+# Retrospectiva # Sprint 5
+
+1) Que hicimos bien?
+
+El equipo mantuvo los buenos puntos de los sprint anterior, sabiendo planificar y dividir las tareas para que cada integrante desorrolle el codigo por si mismo para el bien del proyecto y de la organizacion del grupo. Un punto bueno a remarcar, el sprint se termino a tiempo cumpliendo y repasando todos los objetivos.
+
+2) Que hicimos mal?
+
+Hemos dedicado mas tiempo del necesario para el codigo y detectar errores sensillos, donde entendemos que la practica y la experiencia va a mejorarnos en este punto en lo individual y lo grupal.
+
+3) Que deberiamos empezar a hacer?
+
+Creemos que el equipo viene bien en los puntos positivos antes marcados, y creemos que para el proximo sprint necesitamos volver mas a las bases, y tratar en lo posible juntarnos mas a manudo para poder compartir resoluciones e ideas en estas nuevas etapas del proyecto.
+
+4) Que deberiamos dejar de hacer?
+
+Conectado al segundo punto, notamos que el equipo se cierra a resolver los conflictos en el codigo con sus integrantes, donde quizas consultar y compartir los errores con los profesores o demas compañeros de la cursada, nos ayudaria a ahorrar tiempo
