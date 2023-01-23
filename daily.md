@@ -22,3 +22,9 @@ El equipo en este caso se junto para profundizar sobre la retroespectiva del spr
 # Conclusión de la daily. Sprint 5
 
 La conclusion de nuestra ultima daily es positiva, sentimos que el equipo viene bien, que estamos creciendo y nos gusta el proyecto que estamos formando. Hicimos incapie en que estos sprint finales que son mas largos, que debemos juntarnos mas a menudo para poder organizar y detallar bien todo lo planificado, asi al aplicarlo podemos lograr conseguir los objetivos establecidos.
+
+===============================================
+
+# Conclusion de la daily. Sprint 6
+
+Para este sprint nos hemos reunidos en varias oportunidades. En particular para definir el diagrama de la base de datos, para actualiazar el tablero de trabajo de trello y para definir las tablas con sus relaciones utiilizando mysql workbench. Utilizamos tambien nuesto chat de WhatsApp de forma fluida para ir definiendo los detalles del sprint.
