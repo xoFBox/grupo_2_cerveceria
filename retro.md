@@ -73,6 +73,6 @@ Hemos dedicado mas tiempo del necesario para el codigo y detectar errores sensil
 
 Creemos que el equipo viene bien en los puntos positivos antes marcados, y creemos que para el proximo sprint necesitamos volver mas a las bases, y tratar en lo posible juntarnos mas a manudo para poder compartir resoluciones e ideas en estas nuevas etapas del proyecto.
 
-4) Que deberiamos dejar de hacer?
+4) Que deberiamos dejar de hacer??
 
 Conectado al segundo punto, notamos que el equipo se cierra a resolver los conflictos en el codigo con sus integrantes, donde quizas consultar y compartir los errores con los profesores o demas compañeros de la cursada, nos ayudaria a ahorrar tiempo
