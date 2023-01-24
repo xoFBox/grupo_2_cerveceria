@@ -10,7 +10,7 @@ module.exports = function(sequelize, dataTypes){
             allowNull: false,
             unique: true
         },
-        name:{
+        category_name:{
             type: dataTypes.STRING(45)
         }
     }
