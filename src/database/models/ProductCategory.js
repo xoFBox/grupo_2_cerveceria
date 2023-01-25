@@ -1,6 +1,6 @@
 module.exports = function(sequelize, dataTypes){
 
-    const alias = 'UserCategory';
+    const alias = 'ProductCategory';
 
     const cols = {
         id: {
@@ -16,18 +16,18 @@ module.exports = function(sequelize, dataTypes){
     }
 
     const config = {
-        tableName: 'users_categories',
+        tableName: 'products_categories',
         timestamps: false
     }
 
-    const UserCategory = sequelize.define(alias, cols, config)
+    const ProductCategory = sequelize.define(alias, cols, config)
 
-    UserCategory.associate = function(models){
-        UserCategory.hasMany(models.User,{
-            as: 'users',
-            foreignKey: 'category_id'
+    ProductCategory.associate = function(models){
+        ProductCategory.hasMany(models.Product,{
+            as: 'products',
+            foreignKey: 'product_category_id'
         })
     }
 
-    return UserCategory
+    return ProductCategory;
 }
