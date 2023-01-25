@@ -7,7 +7,8 @@ module.exports = function(sequelize, dataTypes) {
             type: dataTypes.INTEGER,
             primaryKey: true,
             allowNull: false,
-            unique: true
+            unique: true,
+            autoIncrement: true
         },
         name: {
             type: dataTypes.STRING(50),
@@ -22,10 +23,10 @@ module.exports = function(sequelize, dataTypes) {
             allowNull: false,
         },
         ibu: {
-            type: dataTypes.INTEGER
+            type: dataTypes.DECIMAL(5,2),
         },
         alc: {
-            type: dataTypes.INTEGER
+            type: dataTypes.DECIMAL(5,2),
         },
         price: {
             type: dataTypes.DECIMAL(10,2),
@@ -49,10 +50,16 @@ module.exports = function(sequelize, dataTypes) {
             as: 'category',
             foreignKey: 'product_category_id'
         });
-        Product.hasMany(models.CartItem, {
-            as: "products",
-            foreingKey: "poroduct_id"
-        });
+        // Product.hasMany(models.CartProduct, {
+        //     as: "products",
+        //     foreingKey: "poroduct_id"
+        // });
+        Product.belongsToMany(models.Cart, {
+            through: "carts_products",
+            as: "carts",
+            foreingKey: "product_id",
+            otherKey: "cart_id"
+        })
     }
 
     return Product;

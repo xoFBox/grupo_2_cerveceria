@@ -10,6 +10,9 @@ module.exports = function(sequelize, dataTypes){
         total: {
             type: dataTypes.DECIMAL,
             allowNull: false,
+        },
+        payment_id: {
+            type: dataTypes.INTEGER,
         }
 
     };
@@ -21,19 +24,21 @@ module.exports = function(sequelize, dataTypes){
     const Cart = sequelize.define(alias, cols, config);
 
     Cart.associate = function(models){
-        Cart.hasMany(models.Payments, {
-            as: "cart",
+        Cart.hasMany(models.Payment, {
+            as: "payment",
             foreingKey: "payment_id"
         });
         Cart.belongsTo(models.User, {
             as: "user",
             foreingKey: "user_id"
         });
-        Cart.hasMany(models.CartItem, {
-            as: "cart",
-            foreingKey: "item_id"
+        Cart.belongsToMany(models.Product, {
+            through: "carts_products",
+            as: "products",
+            foreingKey: "cart_id",
+            otherKey: "product_id"
         })
-        return Cart;
     };
-   
+    
+    return Cart;
 }
