@@ -23,7 +23,7 @@ module.exports = function(sequelize, dataTypes){
     CartItem.associate = function(models){
         CartItem.belongsTo(models.Product, {
             as: "products",
-            foreingKey: "poroduct_id"
+            foreingKey: "product_id"
         });
         CartItem.belongsTo(models.Cart, {
             as: "cart",

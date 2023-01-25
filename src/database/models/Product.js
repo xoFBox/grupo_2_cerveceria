@@ -51,7 +51,7 @@ module.exports = function(sequelize, dataTypes) {
         });
         Product.hasMany(models.CartItem, {
             as: "products",
-            foreingKey: "poroduct_id"
+            foreingKey: "product_id"
         });
     }
 
