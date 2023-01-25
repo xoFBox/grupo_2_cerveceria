@@ -48,7 +48,11 @@ module.exports = function(sequelize, dataTypes) {
         Product.belongsTo(models.ProductCategory,{
             as: 'category',
             foreignKey: 'product_category_id'
-        })
+        });
+        Product.hasMany(models.CartItem, {
+            as: "products",
+            foreingKey: "poroduct_id"
+        });
     }
 
     return Product;
