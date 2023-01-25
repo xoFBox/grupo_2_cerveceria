@@ -28,7 +28,7 @@ module.exports = function(sequelize, dataTypes) {
             type: dataTypes.INTEGER
         },
         price: {
-            type: dataTypes.INTEGER,
+            type: dataTypes.DECIMAL(10,2),
             allowNull: false,
         },
         product_category_id: {
