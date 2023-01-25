@@ -33,7 +33,8 @@ module.exports = function(sequelize, dataTypes){
             as: "cart",
             foreingKey: "item_id"
         })
-        return Cart;
+       
     };
+    return Cart;
    
 }
