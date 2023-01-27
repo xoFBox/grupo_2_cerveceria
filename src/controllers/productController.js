@@ -1,11 +1,12 @@
-const fs = require('fs');
-const path  = require('path');
-const productDbPath = path.join(__dirname, '../data/productsData.json')
-const allProducts = JSON.parse(fs.readFileSync( productDbPath, 'utf-8'))
+const db = require('../database/models')
 
 const productController = {
     products(req, res){
-        res.render('products/products', {style: '/css/products.css', allProducts} );
+        const allProducts = [];
+        db.Product.findAll()
+            .then(response => response.forEach(element =>allProducts.push(element.dataValues)))
+            .then(()=> res.render('products/products', {style: '/css/products.css', allProducts} ))
+            .catch(error=> res.status(500).json('ERROR: DB_ERROR'))
     },
 
     comidas(req, res){
@@ -17,8 +18,9 @@ const productController = {
     },
 
     detail(req, res){
-        var showProduct = allProducts.find(product =>  product.id == req.params.id);
-        res.render('products/productDetail', {style: '/css/products.css', showProduct});
+        db.Product.findByPk(req.params.id)
+            .then(response=> res.render('products/productDetail', {style: '/css/products.css', showProduct: response}))
+            .catch(error=> res.status(500).json('ERROR: DB_ERROR'))
     },
     
     create(req, res){
