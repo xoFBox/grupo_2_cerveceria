@@ -13,12 +13,18 @@ module.exports = function(sequelize, dataTypes){
         },
         payment_id: {
             type: dataTypes.INTEGER,
+            allowNull: false,
+        },
+        user_id:{
+            type: dataTypes.INTEGER,
+            allowNull: false,
         }
 
     };
     const config = {
         tableName: "carts",
         timestamps: false, 
+        underscored: true
     };
 
     const Cart = sequelize.define(alias, cols, config);
@@ -33,7 +39,7 @@ module.exports = function(sequelize, dataTypes){
             foreingKey: "user_id"
         });
         Cart.belongsToMany(models.Product, {
-            through: "carts_products",
+            through: models.CartProduct,
             as: "products",
             foreingKey: "cart_id",
             otherKey: "product_id"

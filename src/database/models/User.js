@@ -43,7 +43,8 @@ module.exports = function(sequelize, dataTypes){
 
     const config ={
         tableName: 'users',
-        timestamps: false
+        timestamps: false,
+        underscored: true
     }
 
     const User = sequelize.define(alias, cols, config);
@@ -53,10 +54,10 @@ module.exports = function(sequelize, dataTypes){
             as: 'category',
             foreignKey: 'category_id'
         });
-        User.hasMany(models.Cart, {
-            as: "user",
-            foreignKey: "user_id",
-        })
+        // User.hasMany(models.Cart, {
+        //     as: "users",
+        //     foreignKey: "user_id",
+        // })
     }
 
     return User

@@ -1,5 +1,3 @@
-const Cart = require("./Cart");
-
 module.exports = function(sequelize, dataTypes){
     const alias = "CartProduct";
     const cols= {
@@ -25,20 +23,10 @@ module.exports = function(sequelize, dataTypes){
     const config = {
         tableName: "carts_products",
         timestamps: false, 
+        underscored: true
     };
 
-    const CartProduct = sequelize.define(alias,cols, config);
-
-    CartProduct.associate = function(models){
-        CartProduct.hasMany(models.Product, {
-            as: "product",
-            foreingKey: "product_id"
-        });
-        CartProduct.hasMany(models.Cart, {
-            as: "cart",
-            foreingKey: "cart_id"
-        })
-    }
+    const CartProduct = sequelize.define(alias, cols, config);
 
     return CartProduct;
 }
