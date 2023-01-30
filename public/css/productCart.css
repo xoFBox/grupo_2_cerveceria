@@ -51,6 +51,9 @@ main{
     display:flex;
     justify-content: right;
 }
+.id{
+    display: none;
+}
 
 /*.a-pagar{
     background-color:whitesmoke ;

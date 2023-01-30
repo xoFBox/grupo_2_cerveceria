@@ -14,7 +14,18 @@ const productController = {
     },
 
     cart(req, res){
-        res.render('products/productCart', {style: '/css/productCart.css'});
+        let aComprar = [{
+            id:1,
+            name: "IPA",
+            price: 500,
+            quantity: 3,
+        }];
+        let total= 0;
+        for( let i=0; i<aComprar.length;i++){
+            total= total+(aComprar[i].quantity*aComprar[i].price);
+        }
+
+        res.render('products/productCart', {style: '/css/productCart.css', aComprar, total});
     },
 
     detail(req, res){
