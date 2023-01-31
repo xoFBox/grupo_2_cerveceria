@@ -76,3 +76,23 @@ Creemos que el equipo viene bien en los puntos positivos antes marcados, y creem
 4) Que deberiamos dejar de hacer?
 
 Conectado al segundo punto, notamos que el equipo se cierra a resolver los conflictos en el codigo con sus integrantes, donde quizas consultar y compartir los errores con los profesores o demas compañeros de la cursada, nos ayudaria a ahorrar tiempo
+
+
+==================================================
+# Retrospectiva # Sprint 6
+
+1) Que hicimos bien?
+
+Tal como los sprint anteriores, el equipo viene manteniendo los puntos positivos antes descatados, planificacion, uso de herramientas, comunicacion. En este sprint se noto el plus en cuanto a esfuerzo de cada integrante del grupo ya que en la planificacion sabiamos que era el sprint mas complicado, y despues de dedicarle mucho tiempo, estamos contentos con los resultados y el funcionamiento del equipo.
+
+2) Que hicimos mal?
+
+Decididamente creemos que en este sprint ibamos a tener muchos errores en cuanto a codigo, y los tuvimos, ya que era un sprint complicado y era la primera vez que ibamos a trabajar con base de datos, pero de la mano con el punto positivo anterior, creemos que fue un punto positivo el hecho de que lo tuvieramos en cuenta en el momento de la planificacion, y es por eso que dimos un plus en cuanto al esfuerzo. Creemos que nos resta mejorar los estilos de CSS ya que el foco estuvo en que funcionara el CRUD a como lo habiamos planificado.
+
+3) Que deberiamos empezar a hacer?
+
+Creemos que el equipo tiene que dedicarle un poco mas a los estilos CSS de todo lo que venimos trabajando, ya que fue un punto fuerte del equipo en el sprint donde vimos dicho tema.
+
+4) Que deberiamos dejar de hacer?
+
+Nuevamente este punto lo conectamos al punto 2, si bien hicimos mucho esfuerzo en un sprint complicado, donde los tiempos fueron justos, como equipo hicimos la autocritica de intentar a futuro, realizar los estilos CSS con la mayor perfeccion posible a lo que buscamos, en el momento en el cual completamos el CRUD y verificamos su buen funcionamiento.
