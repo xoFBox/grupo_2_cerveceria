@@ -8,16 +8,16 @@
     <div>
         <h5>Crea tu Cuenta</h5>
         <form action="/user/register" method="POST" enctype="multipart/form-data">
-            <label for="firstName">Ingresa tu Nombre</label>
-            <input type="text" name="firstName" id="firstName" value="<%= locals.oldData ? oldData.firstName : null %>">
-            <% if (locals.errors && errors.firstName) { %>
-                <p style="color: red"> <%= errors.firstName.msg %></p>
+            <label for="first_name">Ingresa tu Nombre</label>
+            <input type="text" name="first_name" id="first_name" value="<%= locals.oldData ? oldData.first_name : null %>">
+            <% if (locals.errors && errors.first_name) { %>
+                <p style="color: red"> <%= errors.first_name.msg %></p>
             <% } %> 
 
-            <label for="lastName">Ingresa tu Apellido</label>
-            <input type="text" name="lastName" id="lastName" value="<%= locals.oldData ? oldData.lastName : null %>">
-            <% if (locals.errors && errors.lastName) { %>
-                <p style="color: red;"> <%= errors.lastName.msg %></p>
+            <label for="last_name">Ingresa tu Apellido</label>
+            <input type="text" name="last_name" id="last_name" value="<%= locals.oldData ? oldData.last_name : null %>">
+            <% if (locals.errors && errors.last_name) { %>
+                <p style="color: red;"> <%= errors.last_name.msg %></p>
             <% } %> 
 
             <label for="email">Ingresa tu email</label>
@@ -39,6 +39,12 @@
             <input type="password" name="confirmPassword" id="confirmPassword" >
             <% if (locals.errors && errors.confirmPassword) { %>
                 <p style="color: red;"> <%= errors.confirmPassword.msg %></p>
+            <% } %> 
+
+            <label for="address">Ingresa tu Direccion</label>
+            <input type="text" name="address" id="address" value="<%= locals.oldData ? oldData.address : null %>">
+            <% if (locals.errors && errors.address) { %>
+                <p style="color: red;"> <%= errors.address.msg %></p>
             <% } %> 
          
             <label for="image">Elige tu Foto de Perfil</label>

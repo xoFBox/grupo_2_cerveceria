@@ -1,9 +1,8 @@
-const fs = require('fs');
-const path = require('path');
-const userDbPath = path.join(__dirname, "../data/usersData.json");
-const allUsers = JSON.parse(fs.readFileSync(userDbPath, 'utf-8'));
+const db = require('../database/models')
+
 const bcrypt = require('bcryptjs');
 const { validationResult } = require('express-validator');
+const { includes } = require('../middlewares/userRegisterValidation');
 
 const userController = {
 
@@ -12,24 +11,31 @@ const userController = {
     },
 
     loginPost(req,res){
-        
-        let found = allUsers.find(user => user.email == req.body.email)
+        db.User.findOne({
+            where:{
+                email: req.body.email
+            },
+            include: "category"
+        })
+        .then((found)=>{
+            if(found && bcrypt.compareSync(req.body.password, found.password)){
 
-        if(found && bcrypt.compareSync(req.body.password, found.password)){
-
-            // aqui se ocultaria la password de 'found'
-
-            req.session.user = found;
-            
-            if(req.body.recordame){
-                res.cookie('user' ,req.session.user, {maxAge : (1000*60)*2})
+                // aqui se ocultaria la password de 'found'
+                found.category_id = found.category.category_name
+                req.session.user = found;
+                
+                if(req.body.recordame){
+                    res.cookie('user' ,req.session.user, {maxAge : (1000*60)*2})
+                }
+    
+                res.redirect('/user/profile')
+            } else {
+                //no se logueo
+                res.render('users/login', {style: '/css/login.css', userNotFound: true})
             }
+        })
 
-            res.redirect('/user/profile')
-        } else {
-            //no se logueo
-            res.render('users/login', {style: '/css/login.css', userNotFound: true})
-        }
+        
        
     },
 
@@ -48,32 +54,50 @@ const userController = {
         } else {
             delete req.body.confirmPassword;    
 
-        const found = allUsers.find(user => req.body.email == user.email)
+            db.User.findOne({
+                where:{
+                    email: req.body.email
+                }
+            })
+            .then((found)=>{
+                if(found){
+                    res.render('users/register',{style: '/css/register.css', emailNotAvailable: true})
+                } else{
+                    let nombreImagen = "default.png"
+                    if(req.file.filename){
+                        nombreImagen = req.file.filename
+                    }
+                    
+                    db.UserCategory.findOne({
+                        where:{
+                            category_name: req.body.category
+                        }
+                    })
+                    .then((c)=>{
+                        db.User.create({
+                            first_name: req.body.first_name,
+                            last_name:  req.body.last_name,
+                            email:  req.body.email,
+                            password: bcrypt.hashSync(req.body.password, 10),
+                            address: req.body.address,
+                            image: nombreImagen,
+                            category_id: c.id
+                        })
+                        .then(()=>{
+                            req.session.user = {
+                                ...req.body,
+                                image: req.file.filename,
+                                category_id: c.category_name,
+                            }
+                            
+                            res.redirect('/');
+                        })
+                    })
         
-        if(found){
-            res.render('users/register',{style: '/css/register.css', emailNotAvailable: true})
-        } else{
-            let nombreImagen = "default.png"
-            if(req.file.filename){
-                nombreImagen = req.file.filename
-            }   
-
-            const newUser = {
-                id: allUsers[allUsers.length-1].id +1,
-                ...req.body,
-                password: bcrypt.hashSync(req.body.password, 10),
-                image: nombreImagen
-            }
-            allUsers.push(newUser)
-    
-            fs.writeFileSync(userDbPath, JSON.stringify(allUsers, null, ' '));
-
-            delete newUser.password
-
-            req.session.user = newUser
-            
-            res.redirect('/');
-        }
+                    
+                    
+                }
+            })
         }
     },
 
@@ -85,10 +109,64 @@ const userController = {
         res.render('users/profileEdit', {style: '/css/register.css'});
     },
 
+    editPost(req,res){
+        let nombreImagen = "default.png"
+        if(req.file.filename){
+            nombreImagen = req.file.filename
+        }
+        db.UserCategory.findOne({
+            where:{
+                category_name: req.body.category
+            }
+        })
+        .then((c)=>{
+            db.User.update(
+                {
+                    first_name: req.body.first_name,
+                    last_name:  req.body.last_name,
+                    email:  req.body.email,
+                    password: bcrypt.hashSync(req.body.password, 10),
+                    address: req.body.address,
+                    image: nombreImagen,
+                    category_id: c.id
+                },
+                {
+                    where: {id: req.params.id}
+                })
+                .then(()=>{
+                    req.session.user = {
+                        image: req.file.filename,
+                        ...req.body,
+                        category_id: c.category_name,
+                    }
+
+                    res.redirect('/');
+                })
+        })
+        
+    },
+
     logout(req, res){
         res.clearCookie('user')
         req.session.destroy();
         res.redirect('/')
+    },
+
+    newCategory(req,res){
+        db.UserCategory.findOne({
+            where:{
+                category_name: req.body.newCategory
+            }
+        })
+        .then((found)=>{
+            if(!found){
+                db.UserCategory.create({
+                    category_name: req.body.newCategory
+                })
+            }
+            res.redirect('/')
+        })
+        
     }
 }
 

@@ -4,17 +4,17 @@
 <body>
     <%- include('../partials/header') %>
     <section>
-        <h2> Bienvenido a tu perfil <%= locals.user.firstName %>  </h2>
+        <h2> Bienvenido a tu perfil <%= locals.user.first_name %>  </h2>
         <br>
         <img class="image" src="/images/users/<%= locals.user.image %>">
         <br>
         <h3>Tus datos </h3>
-        <div class="firstName"> Nombre: <%= locals.user.firstName %></div>
-        <div class="lastName">Apellido: <%= locals.user.lastName %></div>
+        <div class="firstName"> Nombre: <%= locals.user.first_name %></div>
+        <div class="lastName">Apellido: <%= locals.user.last_name %></div>
         <div class="email"> Email: <%= locals.user.email %></div>
-        <div class="category"> Categoría: <%= locals.user.category %> </div>
+        <div class="category"> Categoría: <%= locals.user.category_id %> </div>
         <br>
-        <a href="/user/edit" ><button type="sumit">Editar</button></a>
+        <a href="/user/edit/<%= locals.user.id %>" ><button type="sumit">Editar</button></a>
     </section>
     <%- include('../partials/footer') %> 
 </body>

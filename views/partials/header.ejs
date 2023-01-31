@@ -17,7 +17,7 @@
      <!-- Esta Logueado -->
      <% if (locals.logueado) {%> 
      <div>
-        <a href="/user/profile"> Hola <%= locals.user.firstName %>
+        <a href="/user/profile"> Hola <%= locals.user.first_name %>
             <img src="/images/users/<%= locals.user.image %> " width="40" style="border-radius: 100%"></a>
         
         <a href="/user/logout"><i class="fa-sharp fa-solid fa-right-to-bracket"></i></a>
