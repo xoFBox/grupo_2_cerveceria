@@ -7,7 +7,7 @@
    <main>
         <div>
             <h5>Actualice tu producto</h5>
-            <form action="/products/update/<%= product.id %>?_method=PUT" method="POST">
+            <form action="/products/update/<%= product.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
                 <label for="name"></label>
                 <input type="text" name="name" id="name" value="<%= product.name%>">
 
@@ -19,7 +19,7 @@
 
                 <label for="category"></label>
                 <select name="category" id=" category" selected="<%= product.category%>">
-                    <option value="cerveza">Cerveza</option>
+                    <option value="1">Cerveza</option>
                     <option value="merch">Merchandising</option>
                     <option value="comida">Comida</option>
                 </select>

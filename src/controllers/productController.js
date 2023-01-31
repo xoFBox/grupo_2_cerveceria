@@ -1,3 +1,4 @@
+const { parse } = require('dotenv');
 const db = require('../database/models')
 
 const productController = {
@@ -35,16 +36,26 @@ const productController = {
     },
     
     create(req, res){
-        res.render('products/productCreate', {style: '/css/productCreateMod.css'});
+        //res.render('products/productCreate', {style: '/css/productCreateMod.css'});
+        db.Product.findAll()
+            .then(function(product) {
+                return res.render('products/productCreate', {style: '/css/productCreateMod.css', product: product});
+            })
     },
 
     edit(req, res){
+        /*
         const product = allProducts.find(p=> p.id == req.params.id)
         if (!product) return res.redirect('/')
         res.render('products/productUpdate', {style: '/css/productCreateMod.css', product});
+        */
+        db.Product.findByPk(req.params.id)
+        .then(product=> res.render('products/productUpdate', {style: '/css/productCreateMod.css', product: product}))
+        .catch(error=> res.status(500).json('ERROR: DB_ERROR'))
     },
 
     storage(req, res){
+        /*
         allProducts.push({
             id: allProducts[allProducts.length-1].id +1,
             ...req.body,
@@ -54,9 +65,22 @@ const productController = {
         fs.writeFileSync(productDbPath, JSON.stringify(allProducts, null, 2));
 
         res.redirect('/');
+        */
+       db.Product.create({
+           name: req.body.name,
+           description: req.body.description,
+           image: req.file.filename,
+           ibu: req.body.IBU,
+           alc: req.body.ALC,
+           price: req.body.price,
+           product_category_id: req.body.category
+       })
+       .then(() => res.redirect('/products'))
+       .catch(error=> res.status(500).json('ERROR: DB_ERROR' + error))
     },
 
     update(req, res){
+        /*
         const index = allProducts.findIndex(prod=> prod.id == req.params.id)
         if( index === -1) return res.redirect('/products')
 		allProducts[index] = {
@@ -66,12 +90,38 @@ const productController = {
 		}
 		fs.writeFileSync(productDbPath, JSON.stringify(allProducts, null, 2))
 		res.redirect('/products')
+        */
+       db.Product.update({
+            name: req.body.name,
+            description: req.body.description,
+            image: req.file.filename,
+            ibu: req.body.IBU,
+            alc: req.body.ALC,
+            price: req.body.price,
+            product_category_id: parseInt(req.body.category)
+        },
+        {
+            where: {
+                id: req.params.id,
+            },
+        }
+       )
+       .then(() => res.redirect('/products'))
+       .catch(error=> res.status(500).json('ERROR: DB_ERROR' + error))
     },
     destroy : (req, res) => {
-        
+        /*
 		let newProducts = allProducts.filter(prod => prod.id != req.params.id)
 		fs.writeFileSync(productDbPath, JSON.stringify(newProducts, null, " "))
 		res.redirect('/')
+        */
+       db.Product.destroy({
+        where: {
+            id: req.params.id
+        }
+       })
+       .then(() => res.redirect('/products'))
+       .catch(error=> res.status(500).json('ERROR: DB_ERROR' + error))
 	}
 }
 
