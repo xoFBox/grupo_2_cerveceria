@@ -39,6 +39,8 @@ userRoute.get('/edit/:id', userUnknow, userController.edit)
 
 userRoute.put('/edit/:id',  userUnknow, upload.single('image'), userController.editPost)
 
+userRoute.delete('/delete/:id',  userUnknow, userController.delete)
+
 userRoute.get('/logout', userController.logout)
 
 module.exports = userRoute;

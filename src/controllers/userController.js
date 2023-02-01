@@ -83,13 +83,9 @@ const userController = {
                             image: nombreImagen,
                             category_id: c.id
                         })
-                        .then(()=>{
-                            req.session.user = {
-                                ...req.body,
-                                image: req.file.filename,
-                                category_id: c.category_name,
-                            }
-                            
+                        .then((creado)=>{
+                            creado.category_id = c.category_name,
+                            req.session.user = creado
                             res.redirect('/');
                         })
                     })
@@ -150,6 +146,17 @@ const userController = {
         res.clearCookie('user')
         req.session.destroy();
         res.redirect('/')
+    },
+
+    delete(req, res){
+        db.User.destroy({
+            where:{
+                id:req.params.id
+            }
+        })
+        .then(()=>{
+            res.redirect('/user/logout')
+        })
     },
 
     newCategory(req,res){

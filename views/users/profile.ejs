@@ -14,7 +14,12 @@
         <div class="email"> Email: <%= locals.user.email %></div>
         <div class="category"> Categoría: <%= locals.user.category_id %> </div>
         <br>
+
         <a href="/user/edit/<%= locals.user.id %>" ><button type="sumit">Editar</button></a>
+
+        <form action="/user/delete/<%= locals.user.id %>?_method=DELETE" method="POST" >
+            <button type="submit" class="action-button delete">Borrar Cuenta</button>
+        </form>
     </section>
     <%- include('../partials/footer') %> 
 </body>
