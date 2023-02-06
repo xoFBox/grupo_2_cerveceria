@@ -12,22 +12,15 @@
             <div class="eliminar"> </div>
         </section>
         <% aComprar.forEach((producto) =>{ %> 
-        <form action="/productCart.html" method="POST" class="vendido" name="producto">
+        <form action="/products/cartDelete" method="POST" class="vendido" name="producto">
             <div class="id"><%= producto.id %></div>
             <div class="v-cant"><%= producto.quantity %></div>   
-            <div class="v-imagenProd"><img src="/images/mini1.IPA.jpg" alt=<%= producto.name %> class="mini-img"></div>
+            <div class="v-imagenProd"><img src="/images/mini1.<%=producto.name%>.jpg" alt=<%= producto.name %> class="mini-img"></div>
             <div class="v-descripcion"><p><%=producto.name %></p></div>
-            <div class="v-subTotal"><p><%= producto.price %></p></div>
-            <div class="v-eliminar"><button type="reset" value="eliminar" name="producto">X</button></div>
+            <div class="v-subTotal"><p><%= producto.subtotal %></p></div>
+            <div class="v-eliminar"><button type="submit" value="eliminar" name="producto">X</button></div>
         </form>
         <% }) %> 
-        <form action="/productCart.html" method="POST" class="vendido" name="producto">
-            <div class="v-cant"><p>2</p></div>   
-            <div class="v-imagenProd"><img src="/images/mini1.IPA.jpg" alt="ipa" class="mini-img"></div>
-            <div class="v-descripcion"><p>Cerveza IPA</p></div>
-            <div class="v-subTotal"><p>$900</p></div>
-            <div class="v-eliminar"><button type="reset" value="eliminar" name="producto">X</button></div>
-        </form>
         <form action="/productCart.html" method="POST" class="vendido" name="producto">
             <div class="v-cant"><p></p></div>   
             <div class="v-imagenProd"><img class="mini-img"></div>
@@ -49,12 +42,12 @@
         <br>
         <form action="/" method="post"><div class="a-pagar">
             <label name="pagar"><h3>Elija su forma de pago</h3>       
-           <div class="opciones-pago"><br><input type="radio" name="pagar" value="efectivo">Efectivo
-            <br><input type="radio" name="pagar" value="tarj-deb">Tarjeta de Débito
-            <br><input type="radio" name="pagar" value="tarj-cred">Tarjeta de Crédito <input type="number"/> cuotas
-            <br><input type="radio" name="pagar" value="tranferencia">Transferencia </label></div> 
+           <div class="opciones-pago"><br><input type="radio" name="pagar" value="1">Efectivo
+            <br><input type="radio" name="pagar" value="2">Tarjeta de Débito
+            <br><input type="radio" name="pagar" value="3">Tarjeta de Crédito <input type="number"/> cuotas
+            <br><input type="radio" name="pagar" value="4">Transferencia </label></div> 
  
-    <br><button type="sumit" value="pagar" class="boton-pagar"><p>Pagar</p></button>
+    <br><a href="/products"><button type="sumit" value="pagar" class="boton-pagar"><p>Pagar</p></button></a>
 <button type="reset" value="cancelar" class="boton-cancelar"><p>Cancelar</p></button></form></div>
     <br>
     <%- include('../partials/footer') %> 

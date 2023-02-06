@@ -15,19 +15,40 @@ const productController = {
     },
 
     cart(req, res){
-        let aComprar = [{
-            id:1,
-            name: "IPA",
-            price: 500,
-            quantity: 3,
+        const aComprar = [ {
+           id: req.body.id,
+           quantity: req.body.unidades,
+           name: req.body.name,
+           subtotal: req.body.unidades*req.body.price,
         }];
         let total= 0;
         for( let i=0; i<aComprar.length;i++){
-            total= total+(aComprar[i].quantity*aComprar[i].price);
-        }
+            total= total+(aComprar[i].subtotal);
+        };
+        console.log(aComprar);
 
         res.render('products/productCart', {style: '/css/productCart.css', aComprar, total});
     },
+
+/*/
+    delete(req, res){
+        db.Cart.delete({
+            where: {
+                product_id: req.body.id/req.params.id
+            }
+        })
+
+    },
+/*/
+    /*/
+    buy(req, res){
+        db.Cart.create({
+            total: req.body.total,
+            payment_id: req.body.pagar,
+            user_id: req.session.user,
+        })
+    },
+    /*/
 
     detail(req, res){
         db.Product.findByPk(req.params.id)

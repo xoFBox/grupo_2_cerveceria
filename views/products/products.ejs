@@ -13,10 +13,12 @@
         </div>
         <div class="details-imgarticle">
          <% for(i=0; i<allProducts.length; i++){ %> 
-          <article>
-            <div class="id"><%=allProducts[i].id  %></div>
+            <form action="/products/cart" method="post">
+                <article>
+             <input class="info" name="id" value="<%=allProducts[i].id %>">
                <div class="details-descripcion">
                   <h4>  <%=allProducts[i].name %></h4>
+                  <input class="info" name="name" value="<%=allProducts[i].name %>"> 
                   <% if (allProducts[i].category == "cerveza") { %>
                   <p>ALC: <%=allProducts[i].ALC %> / IBU <%=allProducts[i].IBU %> </p>
                <% } %>
@@ -26,9 +28,10 @@
                </a>
                 
                 <p>$ <%=allProducts[i].price %></p>
+                <input class="info" name="price" value="<%=allProducts[i].price %>">
                 <div class="details-unidades-carrito">
                   <div>
-                     <form action="/cantidad" method="GET">
+                     <form action="/cantidad" method="post">
                          <label>Quiero</label>
                          <select name="unidades">
                             <option value="1">1</option>
@@ -50,10 +53,11 @@
                    </div>
                     <div>
                      <i class="fas fa-shopping-cart"></i>
-                     <input type="submit" value="Agregar al carrito">
+                     <a href="products/cart"><input type="submit" value="Agregar al carrito"></a>
                     </div>
                   </div>
                </article>
+            </form>
                <% } %>
          </div> 
     </section>
