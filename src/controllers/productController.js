@@ -1,5 +1,9 @@
 const { parse } = require('dotenv');
-const db = require('../database/models')
+const db = require('../database/models');
+
+const { validationResult } = require('express-validator');
+const { includes } = require('../middlewares/productValidation');
+
 
 const productController = {
     products(req, res){
@@ -66,18 +70,26 @@ const productController = {
 
         res.redirect('/');
         */
-       db.Product.create({
-           name: req.body.name,
-           description: req.body.description,
-           image: req.file.filename,
-           ibu: req.body.IBU,
-           alc: req.body.ALC,
-           price: req.body.price,
-           product_category_id: req.body.category
-       })
-       .then(() => res.redirect('/products'))
-       .catch(error=> res.status(500).json('ERROR: DB_ERROR' + error))
-    },
+        const resultValidation = validationResult(req);
+        if(resultValidation.errors.length > 0) {
+            return res.render('products/productCreate', {
+                errors: resultValidation.mapped(),
+                style: '/css/productCreateMod.css',
+                oldData: req.body
+            })}
+        else{
+            db.Product.create({
+                name: req.body.name,
+                description: req.body.description,
+                image: req.file.filename,
+                ibu: req.body.IBU,
+                alc: req.body.ALC,
+                price: req.body.price,
+                product_category_id: req.body.category
+            })
+            .then(() => res.redirect('/products'))
+            .catch(error=> res.status(500).json('ERROR: DB_ERROR' + error))
+        }},
 
     update(req, res){
         /*
@@ -91,24 +103,32 @@ const productController = {
 		fs.writeFileSync(productDbPath, JSON.stringify(allProducts, null, 2))
 		res.redirect('/products')
         */
-       db.Product.update({
-            name: req.body.name,
-            description: req.body.description,
-            image: req.file.filename,
-            ibu: req.body.IBU,
-            alc: req.body.ALC,
-            price: req.body.price,
-            product_category_id: parseInt(req.body.category)
-        },
-        {
-            where: {
-                id: req.params.id,
-            },
-        }
-       )
-       .then(() => res.redirect('/products'))
-       .catch(error=> res.status(500).json('ERROR: DB_ERROR' + error))
-    },
+        const resultValidation = validationResult(req);
+        if(resultValidation.errors.length > 0) {
+            return res.render('products/productUpdate', {
+                errors: resultValidation.mapped(),
+                style: '/css/productCreateMod.css',
+                oldData: req.body
+            })}
+        else{
+            db.Product.update({
+                    name: req.body.name,
+                    description: req.body.description,
+                    image: req.file.filename,
+                    ibu: req.body.IBU,
+                    alc: req.body.ALC,
+                    price: req.body.price,
+                    product_category_id: parseInt(req.body.category)
+                },
+                {
+                    where: {
+                        id: req.params.id,
+                    },
+                }
+            )
+            .then(() => res.redirect('/products'))
+            .catch(error=> res.status(500).json('ERROR: DB_ERROR' + error))
+        }},
     destroy : (req, res) => {
         /*
 		let newProducts = allProducts.filter(prod => prod.id != req.params.id)
