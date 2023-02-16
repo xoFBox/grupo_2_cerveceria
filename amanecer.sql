@@ -38,7 +38,7 @@ CREATE TABLE `Users` (
   UNIQUE KEY `email_UNIQUE` (`email`),
   KEY `category_id_idx` (`category_id`),
   CONSTRAINT `category_id` FOREIGN KEY (`category_id`) REFERENCES `users_categories` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -47,7 +47,7 @@ CREATE TABLE `Users` (
 
 LOCK TABLES `Users` WRITE;
 /*!40000 ALTER TABLE `Users` DISABLE KEYS */;
-INSERT INTO `Users` VALUES (1,'Gaston','Rojas','gaston.rojas.dev@gmail.com','1234','Marcelo T. de Alvear 2074 5to H, Ciudad Autonoma de Buenos Aires, Argentina','default.png',1);
+INSERT INTO `Users` VALUES (2,'Gaston','Rojas','gaston.rojas.dev@gmail.com','$2a$10$k7fwiI1FlbJ/y/OhDrkZ5uRJkQkYG4O7yJFfLY6PoPcczlmYVMCUS','Matcelo t de Alvear 2074 5to H','quemirasbobo.gif',1);
 /*!40000 ALTER TABLE `Users` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -68,8 +68,8 @@ CREATE TABLE `carts` (
   KEY `payment_id_idx` (`payment_id`),
   KEY `user_id_idx` (`user_id`),
   CONSTRAINT `payment_id` FOREIGN KEY (`payment_id`) REFERENCES `payments` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `user_id` FOREIGN KEY (`user_id`) REFERENCES `Users` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+  CONSTRAINT `user_id` FOREIGN KEY (`user_id`) REFERENCES `Users` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -78,7 +78,6 @@ CREATE TABLE `carts` (
 
 LOCK TABLES `carts` WRITE;
 /*!40000 ALTER TABLE `carts` DISABLE KEYS */;
-INSERT INTO `carts` VALUES (1,0,1,1);
 /*!40000 ALTER TABLE `carts` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -98,9 +97,9 @@ CREATE TABLE `carts_products` (
   UNIQUE KEY `id_UNIQUE` (`id`),
   KEY `poroduct_id_idx` (`product_id`),
   KEY `cart_id_idx` (`cart_id`),
-  CONSTRAINT `cart_id` FOREIGN KEY (`cart_id`) REFERENCES `carts` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `product_id` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+  CONSTRAINT `cart_id` FOREIGN KEY (`cart_id`) REFERENCES `carts` (`id`) ON DELETE CASCADE,
+  CONSTRAINT `product_id` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -109,7 +108,6 @@ CREATE TABLE `carts_products` (
 
 LOCK TABLES `carts_products` WRITE;
 /*!40000 ALTER TABLE `carts_products` DISABLE KEYS */;
-INSERT INTO `carts_products` VALUES (1,1,1,1);
 /*!40000 ALTER TABLE `carts_products` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -158,8 +156,8 @@ CREATE TABLE `products` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_UNIQUE` (`id`),
   KEY `category_id_idx` (`product_category_id`),
-  CONSTRAINT `product_category_id` FOREIGN KEY (`product_category_id`) REFERENCES `products_categories` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+  CONSTRAINT `product_category_id` FOREIGN KEY (`product_category_id`) REFERENCES `products_categories` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -168,7 +166,7 @@ CREATE TABLE `products` (
 
 LOCK TABLES `products` WRITE;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
-INSERT INTO `products` VALUES (1,'IPA','una birra','default.png',5.10,5.00,500.00,1);
+INSERT INTO `products` VALUES (1,'IPA','Imbatible sabor con amargor justo y refrescante con lupulo.','1.IPA.jpg',70.00,6.30,500.00,1),(2,'APA','Refrescante, lupulada e ideal para cualquier momento.','2.APA.jpg',28.00,6.00,500.00,1),(3,'Dorada Pampeana','De fermentación alta, elaborada con maltas y lúpulos nacionales. De color ámbar, con buena espuma blanca y cremosa. Se percibe aromas cítricos a los que se añaden los otorgados por la malta. ','4.DoradaPampeana.jpg',12.00,5.70,500.00,1),(4,'Bohemian Pils','Clasica pilsener, muy refrescante.','6.BohemianPils.jpg',17.00,5.50,500.00,1),(5,'IPL','Cerveza lupulada de amargor medio, color dorado y de fermentación Lager. ','7.IPL.jpg',47.00,5.50,500.00,1),(6,'Scottish','Se caracteriza por un pronunciado carácter malteado, amargor leve y una terminación ligeramente dulce, contenido alcohólico medio, buen cuerpo y excelente sabor.','8.Scotish.jpg',8.00,5.80,500.00,1);
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -184,7 +182,7 @@ CREATE TABLE `products_categories` (
   `category_name` varchar(50) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_UNIQUE` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -193,7 +191,7 @@ CREATE TABLE `products_categories` (
 
 LOCK TABLES `products_categories` WRITE;
 /*!40000 ALTER TABLE `products_categories` DISABLE KEYS */;
-INSERT INTO `products_categories` VALUES (1,'cerveza');
+INSERT INTO `products_categories` VALUES (1,'Cerveza'),(2,'Comida'),(3,'Merchandasing');
 /*!40000 ALTER TABLE `products_categories` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -231,4 +229,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-01-26 23:41:57
+-- Dump completed on 2023-02-16 15:51:46
