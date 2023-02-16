@@ -9,12 +9,18 @@
             <h5>Entra en tu Cuenta</h5>
             <form action="/user/login" method="POST">
                 <label for="email"></label>
-                <input type="email" name="email" id="email" placeholder="Ingresa tu email">
+                <input type="email" name="email" id="email" placeholder="Ingresa tu email" value="<%= locals.oldData ? oldData.email : null %>">
+                <% if (locals.errors && errors.email) { %>
+                    <p style="color: red"> <%= errors.email.msg %></p>
+                <% } %>  
+                <label for="contraseña"></label>
+                <input type="password" name="password" id="password" placeholder="Ingresa tu contraseña" value="<%= locals.oldData ? oldData.password : null %>">
+                <% if (locals.errors && errors.password) { %>
+                    <p style="color: red"> <%= errors.password.msg %></p>
+                <% } %>
                 <% if(locals.userNotFound && userNotFound === true) { %> 
                     <p style="color: red;"> Datos incorrectos </p>
                 <% } %> 
-                <label for="contraseña"></label>
-                <input type="password" name="password" id="password" placeholder="Ingresa tu contraseña">
 
                 <label>Recordame<input type="checkbox" name="recordame" id="recordame"></label>
 
