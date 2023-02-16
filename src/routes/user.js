@@ -4,6 +4,7 @@ const multer = require('multer');
 
 const userController = require('../controllers/userController');
 const validationsMiddleware = require('../middlewares/userRegisterValidation');
+const loginValidation = require('../middlewares/loginValidation');
 
 const storage = multer.diskStorage({
     destination(req, file, cb){
@@ -25,7 +26,7 @@ const userUnknow = require('../middlewares/userUnknow');
 
 userRoute.get('/login',  userAuthLogued, userController.login)
 
-userRoute.post('/login', userController.loginPost)
+userRoute.post('/login', loginValidation, userController.loginPost)
 
 userRoute.post('/newCategory', userController.newCategory)
 

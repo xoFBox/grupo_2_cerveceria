@@ -11,6 +11,14 @@ const userController = {
     },
 
     loginPost(req,res){
+        const resultValidation = validationResult(req);
+        if(resultValidation.errors.length > 0) {
+            return res.render('users/login', {
+                errors: resultValidation.mapped(),
+                style: '/css/login.css',
+                oldData: req.body
+            });
+        } 
         db.User.findOne({
             where:{
                 email: req.body.email
@@ -31,7 +39,8 @@ const userController = {
                 res.redirect('/user/profile')
             } else {
                 //no se logueo
-                res.render('users/login', {style: '/css/login.css', userNotFound: true})
+                res.render('users/login', {style: '/css/login.css', userNotFound: true, oldData: req.body})
+                
             }
         })
 

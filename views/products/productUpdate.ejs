@@ -9,20 +9,32 @@
             <h5>Actualice tu producto</h5>
             <form action="/products/update/<%= product.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
                 <label for="name"></label>
-                <input type="text" name="name" id="name" value="<%= product.name%>">
+                <input type="text" name="name" id="name" value="<%= locals.oldData ? oldData.name : null %>">
+                <% if (locals.errors && errors.name) { %>
+                    <p style="color: red"> <%= errors.name.msg %></p>
+                <% } %>
 
                 <label for="description"></label>
-                <textarea type="text" name="description" id="description" value="<%= product.description%>" rows="5"></textarea>
+                <textarea type="text" name="description" id="description" value="<%= locals.oldData ? oldData.description : null %>" rows="5"></textarea>
+                <% if (locals.errors && errors.description) { %>
+                    <p style="color: red"> <%= errors.description.msg %></p>
+                <% } %>
 
                 <label for="image">Selecciona la Imagen</label>
-                <input type="file" name="image" id="image" value="<%= product.image%>" accept="image/png, image/jpeg">
+                <input type="file" name="image" id="image" value="<%= locals.oldData ? oldData.image : null %>" accept="image/png, image/jpeg">
+                <% if (locals.errors && errors.image) { %>
+                    <p style="color: red"> <%= errors.image.msg %></p>
+                <% } %>
 
                 <label for="category"></label>
-                <select name="category" id=" category" selected="<%= product.category%>">
+                <select name="category" id=" category" selected="<%= product.category%>" value="<%= locals.oldData ? oldData.category : null %>">
                     <option value="1">Cerveza</option>
                     <option value="merch">Merchandising</option>
                     <option value="comida">Comida</option>
                 </select>
+                <% if (locals.errors && errors.category) { %>
+                    <p style="color: red"> <%= errors.category.msg %></p>
+                <% } %>
 
                 <label for="IBU">(Solo para Cerveza)</label>
                 <input type="text" name="IBU" id="IBU" value="<%= product.IBU%>">
@@ -31,7 +43,10 @@
                 <input type="text" name="ALC" id="ALC" value="<%= product.ALC%>">
                 
                 <label for="price"></label>
-                <input type="text" name="price" id="price" value="<%= product.price%>">
+                <input type="text" name="price" id="price" value="<%= locals.oldData ? oldData.price : null %>">
+                <% if (locals.errors && errors.price) { %>
+                    <p style="color: red"> <%= errors.price.msg %></p>
+                <% } %>
 
                 <button type="submit">Modificar</button>
 
