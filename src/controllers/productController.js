@@ -1,9 +1,6 @@
-const { parse } = require('dotenv');
-const db = require('../database/models');
-
 const { validationResult } = require('express-validator');
-const { includes } = require('../middlewares/productValidation');
 
+const db = require('../database/models');
 
 const productController = {
     products(req, res){
@@ -15,7 +12,11 @@ const productController = {
     },
 
     comidas(req, res){
-        res.render('products/comidas', {style: '/css/products.css', allProducts} );
+        db.Product.findAll({
+            where: {
+                product_category_id: 2
+            }
+        }).then(result=>res.render('products/comidas', {style: '/css/products.css', allProducts}))
     },
     
     cart(req, res){
@@ -47,14 +48,19 @@ const productController = {
     },
 
     edit(req, res){
-        /*
-        const product = allProducts.find(p=> p.id == req.params.id)
-        if (!product) return res.redirect('/')
-        res.render('products/productUpdate', {style: '/css/productCreateMod.css', product});
-        */
-        db.Product.findByPk(req.params.id)
-        .then(product=> res.render('products/productUpdate', {style: '/css/productCreateMod.css', product: product}))
-        .catch(error=> res.status(500).json('ERROR: DB_ERROR'))
+        const findProduct = db.Product.findByPk(req.params.id);
+        const findCategories = db.ProductCategory.findAll();
+        Promise.all([findProduct, findCategories])
+            .then(values=> {
+                console.log(values[0].description)
+                res.render('products/productUpdate',
+                {
+                  style: '/css/productCreateMod.css',
+                  product: values[0],
+                  categories: values[1]
+                })
+            })
+            .catch(error=> res.status(500).json('ERROR: DB_ERROR' + error))
     },
 
     storage(req, res){

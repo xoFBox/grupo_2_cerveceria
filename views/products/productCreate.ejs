@@ -29,15 +29,12 @@
                 <% } %>
                 <ul id="imageErrors"></ul>
 
-                <label for="category"></label>
-
                 <select name="category" id="pCategory" placeholder="Categoría">
                     <option disabled selected>Selecciona la Categoría</option>
                     <% categories.forEach(cat=>{ %>
                         <option value="<%= cat.id %>" <%=locals.oldData && oldData.category == cat.id ? "selected" : ""%>><%=cat.category_name %></option>
                     <% }) %>
                 </select>
-
                 <% if (locals.errors && errors.category) { %>
                     <p style="color: red"> <%= errors.category.msg %></p>
                 <% } %>
@@ -46,10 +43,10 @@
                 <section>
                     <article>
                         <input type="text" name="IBU" id="IBU" placeholder="Ingresa el IBU">
-                        <input type="text" name="ALC" id="ALC" placeholder="Ingresa el ALC">
+                        <ul id="ibuErrors"></ul>
                     </article>
                     <article>
-                        <ul id="ibuErrors"></ul>
+                        <input type="text" name="ALC" id="ALC" placeholder="Ingresa el ALC">
                         <ul id="alcErrors"></ul>
                     </article>
                 </section>
