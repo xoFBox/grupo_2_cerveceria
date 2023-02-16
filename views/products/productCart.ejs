@@ -11,6 +11,7 @@
             <div class="subTotal"><p>Subtotal</p></div>
             <div class="eliminar"> </div>
         </section>
+        <% if(aComprar.length >0) { %>
         <% aComprar.forEach((producto) =>{ %> 
         <form action="/products/cartDelete" method="POST" class="vendido" name="producto">
             <div class="id"><%= producto.id %></div>
@@ -20,7 +21,7 @@
             <div class="v-subTotal"><p><%= producto.subtotal %></p></div>
             <div class="v-eliminar"><button type="submit" value="eliminar" name="producto">X</button></div>
         </form>
-        <% }) %> 
+        <% }) }%> 
         <form action="/productCart.html" method="POST" class="vendido" name="producto">
             <div class="v-cant"><p></p></div>   
             <div class="v-imagenProd"><img class="mini-img"></div>

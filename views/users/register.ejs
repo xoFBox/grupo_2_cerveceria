@@ -7,54 +7,61 @@
    <main>
     <div>
         <h5>Crea tu Cuenta</h5>
-        <form action="/user/register" method="POST" enctype="multipart/form-data">
+        <form action="/user/register" method="POST" enctype="multipart/form-data" id="form">
             <label for="first_name">Ingresa tu Nombre</label>
             <input type="text" name="first_name" id="first_name" value="<%= locals.oldData ? oldData.first_name : null %>">
             <% if (locals.errors && errors.first_name) { %>
                 <p style="color: red"> <%= errors.first_name.msg %></p>
-            <% } %> 
+            <% } %>
+            <ul id="nameErrors"></ul> 
 
             <label for="last_name">Ingresa tu Apellido</label>
             <input type="text" name="last_name" id="last_name" value="<%= locals.oldData ? oldData.last_name : null %>">
             <% if (locals.errors && errors.last_name) { %>
                 <p style="color: red;"> <%= errors.last_name.msg %></p>
             <% } %> 
+            <ul id="lastNameErrors"></ul>
 
             <label for="email">Ingresa tu email</label>
             <input type="email" name="email" id="email" value="<%= locals.oldData ? oldData.email : null %>">
             <% if (locals.errors && errors.email) { %>
-                <p style="color: red;"> <%= errors.email.msg %></p>
+                <p style="color: red;"> <%= errors.email.msg %></p>  
             <% } %> 
             <% if (locals.emailNotAvailable && emailNotAvailable == true) { %>
                 <p style="color: red;"> Ese email ya se encuentra registrado</p>
             <% } %>
+            <ul id="emailErrors"></ul>
 
             <label for="contraseña">Ingresa tu contraseña</label>
             <input type="password" name="password" id="password" >
             <% if (locals.errors && errors.password) { %>
                 <p style="color: red;"> <%= errors.password.msg %></p>
             <% } %> 
+            <ul id="passwordErrors"></ul>
 
             <label for="contraseña">Repetí tu contraseña</label>
             <input type="password" name="confirmPassword" id="confirmPassword" >
             <% if (locals.errors && errors.confirmPassword) { %>
                 <p style="color: red;"> <%= errors.confirmPassword.msg %></p>
             <% } %> 
+            <ul id="confPassErrors"></ul>
 
             <label for="address">Ingresa tu Direccion</label>
             <input type="text" name="address" id="address" value="<%= locals.oldData ? oldData.address : null %>">
             <% if (locals.errors && errors.address) { %>
                 <p style="color: red;"> <%= errors.address.msg %></p>
             <% } %> 
+            <ul id="addressErrors"></ul>
          
             <label for="image">Elige tu Foto de Perfil</label>
             <input type="file" name="image" id="image" >
             <% if (locals.errors && errors.image) { %>
                 <p style="color: red;"> <%= errors.image.msg %></p>
             <% } %> 
+            <ul id="imageErrors"></ul>
 
             <label>Categoria</label>
-            <select name="category">
+            <select name="category" id="category">
                 <option hidden value=""></option>
                 <option value="cliente">cliente</option>
                 <option value="admin">admin</option>
@@ -63,7 +70,8 @@
             </select>
             <% if (locals.errors && errors.category) { %>
                 <p style="color: red;"> <%= errors.category.msg %></p>
-            <% } %> 
+            <% } %>
+            <ul id="categoryErrors"></ul>
             
             <button type="submit">Enviar</button>
         </form>
@@ -73,5 +81,6 @@
 </main>
 
     <%- include('../partials/footer')  %>
+    <script src="/js/registerForm.js"></script>
 </body>
 </html>

@@ -25,7 +25,9 @@ productRoute.get('/comidas', productController.comidas);
 
 productRoute.get('/detail/:id', productController.detail)
 
-productRoute.post('/cart', productController.cart);
+productRoute.get('/cart', productController.cart);
+productRoute.post('/cart', productController.cartCreate);
+
 
 productRoute.get('/create', productController.create );
 productRoute.post('/create', upload.single('image'), validationsMiddleware , productController.storage)
