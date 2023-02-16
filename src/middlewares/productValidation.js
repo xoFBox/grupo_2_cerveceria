@@ -6,7 +6,7 @@ module.exports = [
     body('description').isLength({min:20}).withMessage('Tiene que tener un minimo de 20 caracteres'),
     body('image').custom((value, { req }) => {
 		let file = req.file;
-		let acceptedExtensions = ['.jpeg', '.png'];
+		let acceptedExtensions = ['.jpeg', '.png', '.jpg', '.gif'];
 
 		if (!file) {
 			throw new Error('Tienes que subir una imagen');

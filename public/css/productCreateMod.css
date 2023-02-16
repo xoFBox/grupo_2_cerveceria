@@ -66,6 +66,10 @@ main a{
     color: blue;
 }
 
+main section{
+    display: none;
+}
+
 @media (min-width: 1024px){
     main div{
 

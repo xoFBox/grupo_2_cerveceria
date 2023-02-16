@@ -17,7 +17,7 @@ const productController = {
     comidas(req, res){
         res.render('products/comidas', {style: '/css/products.css', allProducts} );
     },
-
+    
     cart(req, res){
         let aComprar = [{
             id:1,
@@ -40,10 +40,9 @@ const productController = {
     },
     
     create(req, res){
-        //res.render('products/productCreate', {style: '/css/productCreateMod.css'});
-        db.Product.findAll()
-            .then(function(product) {
-                return res.render('products/productCreate', {style: '/css/productCreateMod.css', product: product});
+        db.ProductCategory.findAll()
+            .then(function(categories) {
+                return res.render('products/productCreate', {style: '/css/productCreateMod.css', categories});
             })
     },
 
@@ -72,11 +71,17 @@ const productController = {
         */
         const resultValidation = validationResult(req);
         if(resultValidation.errors.length > 0) {
-            return res.render('products/productCreate', {
-                errors: resultValidation.mapped(),
-                style: '/css/productCreateMod.css',
-                oldData: req.body
-            })}
+            db.ProductCategory.findAll()
+            .then(function(categories) {
+                return res.render('products/productCreate', {
+                        errors: resultValidation.mapped(),
+                        style: '/css/productCreateMod.css',
+                        oldData: req.body,
+                        categories
+                    })
+            })
+            .catch(error=> console.log(error))
+        }
         else{
             db.Product.create({
                 name: req.body.name,

@@ -7,51 +7,63 @@
    <main>
         <div>
             <h5>Crea tu producto</h5>
-            <form action="/products/create?_method=POST" method="POST" enctype="multipart/form-data">
+            <form id="productCreationForm" action="/products/create?_method=POST" method="POST" enctype="multipart/form-data">
                 <label for="name"></label>
                 <input type="text" name="name" id="name" placeholder="Nombre de Producto" value="<%= locals.oldData ? oldData.name : null %>">
                 <% if (locals.errors && errors.name) { %>
                     <p style="color: red"> <%= errors.name.msg %></p>
                 <% } %>
+                <ul id="nameErrors"></ul>
 
                 <label for="description"></label>
                 <textarea type="text" name="description" id="description" placeholder="Ingresa la Descripción" rows="5" value="<%= locals.oldData ? oldData.description : null %>"></textarea>
                 <% if (locals.errors && errors.description) { %>
                     <p style="color: red"> <%= errors.description.msg %></p>
                 <% } %>
+                <ul id="descriptionErrors"></ul>
 
                 <label for="image">Selecciona la Imagen</label>
-                <input type="file" name="image" id="image" placeholder="Selecciona la Imagen" accept="image/png, image/jpeg" value="<%= locals.oldData ? oldData.image : null %>">
+                <input type="file" name="image" id="image" placeholder="Selecciona la Imagen" accept="image/png, image/jpeg, image/gif, image/jpg"value="<%= locals.oldData ? oldData.image : null %>">
                 <% if (locals.errors && errors.image) { %>
                     <p style="color: red"> <%= errors.image.msg %></p>
                 <% } %>
+                <ul id="imageErrors"></ul>
 
                 <label for="category"></label>
+
                 <select name="category" id="pCategory" placeholder="Categoría">
-                    <option value="<%= locals.oldData ? oldData.category : null %>" disabled selected>Selecciona la Categoría</option>
-                    <option value="1">Cerveza</option>
-                    <option value="merch">Merchandising</option>
-                    <option value="comida">Comida</option>
+                    <option disabled selected>Selecciona la Categoría</option>
+                    <% categories.forEach(cat=>{ %>
+                        <option value="<%= cat.id %>" <%=locals.oldData && oldData.category == cat.id ? "selected" : ""%>><%=cat.category_name %></option>
+                    <% }) %>
                 </select>
+
                 <% if (locals.errors && errors.category) { %>
                     <p style="color: red"> <%= errors.category.msg %></p>
                 <% } %>
+                <ul id="categoryErrors"></ul>
 
-                <label for="IBU">(Solo para Cerveza)</label>
-                <input type="text" name="IBU" id="IBU" placeholder="Ingresa el IBU">
-
-                <label for="ALC">(Solo para Cerveza)</label>
-                <input type="text" name="ALC" id="ALC" placeholder="Ingresa el ALC">
+                <section>
+                    <article>
+                        <input type="text" name="IBU" id="IBU" placeholder="Ingresa el IBU">
+                        <input type="text" name="ALC" id="ALC" placeholder="Ingresa el ALC">
+                    </article>
+                    <article>
+                        <ul id="ibuErrors"></ul>
+                        <ul id="alcErrors"></ul>
+                    </article>
+                </section>
                 
                 <label for="price"></label>
                 <input type="text" name="price" id="price" placeholder="Ingresa el Precio" value="<%= locals.oldData ? oldData.price : null %>">
                 <% if (locals.errors && errors.price) { %>
                     <p style="color: red"> <%= errors.price.msg %></p>
                 <% } %>
+                <ul id="priceErrors"></ul>
 
                 <button type="submit">Crear</button>
 
-                
+
             </form>
             <a href="/products/modify">¿Querés actualizar un producto?</a>
             
@@ -60,5 +72,6 @@
    </main>
    
    <%- include('../partials/footer')  %>
+   <script src="/js/productsForm.js"></script>
 </body>
 </html>
