@@ -7,6 +7,7 @@ const session = require('express-session')
 const mainRoute = require('./src/routes/main')
 const productRoute = require('./src/routes/product')
 const userRoute = require('./src/routes/user')
+const apiProductsRouter = require('./src/routes/api/apiProductsRouter')
 const cookies = require('cookie-parser')
 const userLogueado = require('./src/middlewares/userLoguedo')
 
@@ -31,6 +32,10 @@ app.use(userLogueado)
 app.use('/', mainRoute);
 app.use('/products', productRoute);
 app.use('/user', userRoute);
+
+// api
+
+app.use(apiProductsRouter)
 
 
 app.listen(3000, ()=>{
