@@ -44,17 +44,17 @@
 
                 <section>
                     <article>
-                        <input type="text" name="IBU" id="IBU" placeholder="Ingresa el IBU">
+                        <input type="text" name="IBU" id="IBU" placeholder="Ingresa el IBU" value="<%= locals.oldData ? oldData.IBU : product.ibu %>">
                         <ul id="ibuErrors"></ul>
                     </article>
                     <article>
-                        <input type="text" name="ALC" id="ALC" placeholder="Ingresa el ALC">
+                        <input type="text" name="ALC" id="ALC" placeholder="Ingresa el ALC" value="<%= locals.oldData ? oldData.ALC : product.alc %>">
                         <ul id="alcErrors"></ul>
                     </article>
                 </section>
 
                 <label for="price"></label>
-                <input type="text" name="price" id="price" value="<%= locals.oldData ? oldData.price : null %>">
+                <input type="text" name="price" id="price" value="<%= locals.oldData ? oldData.price : product.price %>">
                 <% if (locals.errors && errors.price) { %>
                     <p style="color: red"> <%= errors.price.msg %></p>
                 <% } %>
