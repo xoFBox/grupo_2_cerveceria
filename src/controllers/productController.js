@@ -16,7 +16,7 @@ const productController = {
             where: {
                 product_category_id: 2
             }
-        }).then(result=>res.render('products/comidas', {style: '/css/products.css', allProducts}))
+        }).then(result=>res.render('products/comidas', {style: '/css/products.css', allProducts: result}))
     },
     cart(req,res){
         let aComprar =[];
