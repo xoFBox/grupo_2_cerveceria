@@ -96,3 +96,24 @@ Creemos que el equipo tiene que dedicarle un poco mas a los estilos CSS de todo 
 4) Que deberiamos dejar de hacer?
 
 Nuevamente este punto lo conectamos al punto 2, si bien hicimos mucho esfuerzo en un sprint complicado, donde los tiempos fueron justos, como equipo hicimos la autocritica de intentar a futuro, realizar los estilos CSS con la mayor perfeccion posible a lo que buscamos, en el momento en el cual completamos el CRUD y verificamos su buen funcionamiento.
+
+==================================================
+# Retrospectiva # Sprint 7
+
+
+1) Que hicimos bien?
+
+Trabajamos de forma agil y organizada. Logramos los objetivos antes del tiempo estipulado.
+
+2) Que hicimos mal?
+
+Nos faltan arreglar algunos detalles del css.
+
+3) Que deberiamos empezar a hacer?
+
+Terminar los componentes visuales sin dejar para mas tarde detalles.
+Debeariamos empezar a reacer la aplicacion en react con react-bootstrap.
+
+4) Que deberiamos dejar de hacer?
+
+Deberiamos dejar de usar ejs. La verdad que el sprint fue bastante corto pero nos lleva a seguir cambiando aspectos de las vistas con ejs cuando ya estamos avanzando con react.
