@@ -31,7 +31,7 @@
 
                 <select name="category" id="pCategory" placeholder="Categoría">
                     <option disabled selected>Selecciona la Categoría</option>
-                    <% categories.forEach(cat=>{ %>
+                    <% categories.forEach(cat=> { %>
                         <option value="<%= cat.id %>" <%=locals.oldData && oldData.category == cat.id ? "selected" : ""%>><%=cat.category_name %></option>
                     <% }) %>
                 </select>

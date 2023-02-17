@@ -1,10 +1,10 @@
 
 window.onload = ()=>{
 let acceptedExtensions = ['jpg', 'png', 'jpeg', 'gif'];
-let acceptedEmails = ['gmail.com', 'hotmail.com', 'outlock.com'];
+let acceptedEmails = ['gmail.com', 'hotmail.com', 'outloock.com', 'yahoo.com', 'yahoo.com.ar'];
 const name = document.getElementById("first_name");
 const lastName = document.getElementById("last_name");
-const confPass = document.getElementById("confPassErrors");
+const confPass = document.getElementById("confirmPassword");
 const form = document.getElementById("form");
 const nameErrors = document.getElementById("nameErrors");
 const imageErrors = document.getElementById("imageErrors");
@@ -61,7 +61,7 @@ const categoryErrors = document.getElementById("categoryErrors");
         if(form.email.value === ""){
             errors ++
             emailErrors.innerHTML = `<li style="color: red"> El campo email es obligatorio</li>`
-        } else if(!acceptedEmails.includes(form.email.value)){
+        } else if(!acceptedEmails.includes(form.email.value.split('@')[1])){
             errors++
             emailErrors.innerHTML = `<li style="color: red"> Ingrese un email valido </li>`
         };
@@ -73,6 +73,7 @@ const categoryErrors = document.getElementById("categoryErrors");
             passwordErrors.innerHTML = `<li style="color: red"> Debe tener entre 8 y 15 caracteres </li>`
         };
         if(confPass.value!== form.password.value){
+            console.log(confPass.value, form.password.value)
             errors++
             confPassErrors.innerHTML =  `<li style="color: red"> Las contraseñas no coinciden, intentelo de nuevo </li>`
         }
@@ -92,8 +93,6 @@ const categoryErrors = document.getElementById("categoryErrors");
             categoryErrors.innerHTML = `<li style="color: red"> Seleccione una categoría </li>`
         }
 
-    
-       
        if(errors==0) form.submit();
 
     });

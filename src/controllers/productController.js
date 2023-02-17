@@ -67,17 +67,6 @@ const productController = {
     },
 
     storage(req, res){
-        /*
-        allProducts.push({
-            id: allProducts[allProducts.length-1].id +1,
-            ...req.body,
-            image: req.file ? req.file.filename : '1.IPA.jpg'
-        })
-
-        fs.writeFileSync(productDbPath, JSON.stringify(allProducts, null, 2));
-
-        res.redirect('/');
-        */
         const resultValidation = validationResult(req);
         if(resultValidation.errors.length > 0) {
             db.ProductCategory.findAll()
@@ -92,31 +81,24 @@ const productController = {
             .catch(error=> console.log(error))
         }
         else{
-            db.Product.create({
+            const productToStore = {
                 name: req.body.name,
                 description: req.body.description,
                 image: req.file.filename,
-                ibu: req.body.IBU,
-                alc: req.body.ALC,
                 price: req.body.price,
                 product_category_id: req.body.category
-            })
+            }
+            if(req.body.product_category_id === "1") {
+                productToStore.ibu = req.body.IBU
+                productToStore.alc = req.body.ALC
+            }
+
+            db.Product.create(productToStore)
             .then(() => res.redirect('/products'))
             .catch(error=> res.status(500).json('ERROR: DB_ERROR' + error))
         }},
 
     update(req, res){
-        /*
-        const index = allProducts.findIndex(prod=> prod.id == req.params.id)
-        if( index === -1) return res.redirect('/products')
-		allProducts[index] = {
-			id: req.params.id,
-			...req.body,
-			image: req.file ? req.file.filename : allProducts[index].image
-		}
-		fs.writeFileSync(productDbPath, JSON.stringify(allProducts, null, 2))
-		res.redirect('/products')
-        */
         const resultValidation = validationResult(req);
         if(resultValidation.errors.length > 0) {
             return res.render('products/productUpdate', {
@@ -125,15 +107,19 @@ const productController = {
                 oldData: req.body
             })}
         else{
-            db.Product.update({
-                    name: req.body.name,
-                    description: req.body.description,
-                    image: req.file.filename,
-                    ibu: req.body.IBU,
-                    alc: req.body.ALC,
-                    price: req.body.price,
-                    product_category_id: parseInt(req.body.category)
-                },
+            const productToStore = {
+                name: req.body.name,
+                description: req.body.description,
+                image: req.file.filename,
+                price: req.body.price,
+                product_category_id: req.body.category
+            }
+            if(req.body.product_category_id === "1") {
+                productToStore.ibu = req.body.IBU
+                productToStore.alc = req.body.ALC
+            }
+
+            db.Product.update(productToStore,
                 {
                     where: {
                         id: req.params.id,
@@ -144,11 +130,6 @@ const productController = {
             .catch(error=> res.status(500).json('ERROR: DB_ERROR' + error))
         }},
     destroy : (req, res) => {
-        /*
-		let newProducts = allProducts.filter(prod => prod.id != req.params.id)
-		fs.writeFileSync(productDbPath, JSON.stringify(newProducts, null, " "))
-		res.redirect('/')
-        */
        db.Product.destroy({
         where: {
             id: req.params.id

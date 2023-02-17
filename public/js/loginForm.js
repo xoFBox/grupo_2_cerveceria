@@ -1,7 +1,7 @@
 window.onload= ()=>{
     const form = document.getElementById("loginForm");
     const emailError = document.getElementById("emailError");
-    let acceptedEmails = ['gmail.com', 'hotmail.com', 'outlock.com'];
+    const acceptedEmails = ['gmail.com', 'hotmail.com', 'outloock.com', 'yahoo.com', 'yahoo.com.ar'];
     const passwordError = document.getElementById("passwordError");
     form.addEventListener("submit", (e)=>{
         e.preventDefault()
@@ -12,7 +12,7 @@ window.onload= ()=>{
         if(validator.isEmpty(form.email.value)){
             errors++
             emailError.innerHTML = `<li style="color: red"> El campo email es obligatorio</li>`
-        } else if(!acceptedEmails.includes(form.email.value)){
+        } else if(!acceptedEmails.includes(form.email.value.split('@')[1])){
             errors++
             emailError.innerHTML = `<li style="color: red"> Ingrese mail valido</li>`
         };

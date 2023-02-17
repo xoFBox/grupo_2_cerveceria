@@ -1,4 +1,3 @@
-
 let acceptedExtensions = ['jpg', 'png', 'jpeg', 'gif'];
 
 const categorySelect = document.getElementById('pCategory')
@@ -9,7 +8,6 @@ const categoryErrors = document.getElementById('categoryErrors')
 const priceErrors = document.getElementById('priceErrors')
 const ibuErrors = document.getElementById('ibuErrors')
 const alcErrors = document.getElementById('alcErrors')
-
 
 const ibuAlcVisibility = () =>{
     if(categorySelect.value === "1") {
@@ -29,7 +27,7 @@ form.addEventListener('submit', e =>{
     e.preventDefault();
 
     let errorCount = 0;
-
+    
     nameErrors.innerHTML = ""
     descriptionErrors.innerHTML = ""
     imageErrors.innerHTML = ""
@@ -74,7 +72,8 @@ form.addEventListener('submit', e =>{
 
     // IBU input validfation
 
-    if (form.category.value = "1"){
+    if (form.category.value == "1"){
+
         if(form.IBU.value === "") {
             errorCount++
             ibuErrors.innerHTML += `<li style="color: red"> IBU de producto es campo obligatorio en cervezas</li>`

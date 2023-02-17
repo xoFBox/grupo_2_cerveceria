@@ -24,9 +24,11 @@ module.exports = function(sequelize, dataTypes) {
         },
         ibu: {
             type: dataTypes.DECIMAL(5,2),
+            allowNull: true
         },
         alc: {
             type: dataTypes.DECIMAL(5,2),
+            allowNull: true
         },
         price: {
             type: dataTypes.DECIMAL(10,2),
