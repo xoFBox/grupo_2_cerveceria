@@ -13,7 +13,7 @@
         </div>
         <div class="details-imgarticle">
          <% for(i=0; i<allProducts.length; i++){ %> 
-            <form action="/products/cart" method="post">
+            <form action="/products/cart" method="post" class="product-form">
                 <article>
              <input class="info" name="id" value="<%=allProducts[i].id %>">
                <div class="details-descripcion">

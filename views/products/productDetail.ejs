@@ -6,7 +6,7 @@
 <main>
     <section>
         <div class="details-imgarticle">
-          <article>
+          <article class="product-detail">
             <div class= id ><%=showProduct.id %> </div>
             <div class="details-descripcion">
                <h4><%=showProduct.name  %> </h4>
@@ -38,7 +38,7 @@
              </div>
              <div>
                 <i class="fas fa-shopping-cart"></i>
-                <input type="submit" value="Agregar al carrito">
+                <a href="products/cart"><input type="submit" value="Agregar al carrito"></a>
              </div>
              <form action="/products/update/<%= showProduct.id%>" method="GET" >
                 <button type="submit" class="action-button delete">MODIFICAR</button>

@@ -132,6 +132,10 @@ label, article i {
     padding: 15px;
 }
 
+.info {
+    display: none;
+}
+
 
 @media (min-width: 769px){
     header i {
@@ -144,9 +148,16 @@ label, article i {
         background-image: url(https://i.pinimg.com/originals/58/8c/4b/588c4ba75cbd6dd9fe3c5bfafaaccdea.jpg)!important;
         background-repeat: repeat;
     }
+
+    .product-form {
+        width: 40%;
+    }
+
+    .product-detail {
+        width: 70%;
+    }
     
-    article {
-            width: 40%;
+    article {      
             border-bottom: none;
             transition: all 400ms;
             background: #f5f5f536;   
@@ -228,6 +239,5 @@ label, article i {
     .info {
         display: none;
     }
-    
 
 }
