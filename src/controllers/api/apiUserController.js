@@ -6,7 +6,6 @@ const apiUserController = {
 
     allUsers(req, res){
         db.User.findAll()
-        .then(response => data= response)
         .then(data => {
             res.status(200).json({
                 count: data.length,
@@ -19,7 +18,6 @@ const apiUserController = {
 
     userDetail(req, res){
        db.User.findByPk(req.params.id)
-        .then(response => data = response)
         .then(data=> {
             res.status(200).json({
                 user: {
