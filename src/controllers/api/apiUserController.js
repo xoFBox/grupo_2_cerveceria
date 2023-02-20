@@ -10,7 +10,7 @@ const apiUserController = {
         .then(data => {
             res.status(200).json({
                 count: data.length,
-                data: data.map(user=>({user , detail: `localhost:3000/api/users/${user.id}`}))
+                data: data.map(user=>({id: user.id, firstName: user.first_name, email: user.email, detail: `localhost:3000/api/users/${user.id}`}))
                 
     })})
         .catch(error => res.status(500).json('ERROR: DB_ERROR' + error))
@@ -35,20 +35,6 @@ const apiUserController = {
         .catch(error => res.status(500).json('ERROR: DB_ERROR' + error))
         }
     };
-      const usersDb = (user)=>{
-       const users = {
-            id: user.id,
-            firstName: user.first_name,
-            lastName: user.last_name,
-            email: user.email,
-            address: user.address,
-    
-        };
-        return users;
-
-      };
-    
-    
-
+     
 
 module.exports = apiUserController
