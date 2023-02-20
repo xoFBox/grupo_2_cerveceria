@@ -8,6 +8,7 @@ const mainRoute = require('./src/routes/main')
 const productRoute = require('./src/routes/product')
 const userRoute = require('./src/routes/user')
 const apiProductsRouter = require('./src/routes/api/apiProductsRouter')
+const apiUserRouter = require('./src/routes/api/apiUserRoutes')
 const cookies = require('cookie-parser')
 const userLogueado = require('./src/middlewares/userLoguedo')
 
@@ -35,7 +36,8 @@ app.use('/user', userRoute);
 
 // api
 
-app.use(apiProductsRouter)
+app.use(apiProductsRouter);
+app.use(apiUserRouter);
 
 
 app.listen(3000, ()=>{
