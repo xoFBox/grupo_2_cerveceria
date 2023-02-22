@@ -7,7 +7,7 @@ const productController = {
         const allProducts = [];
         db.Product.findAll()
             .then(response => response.forEach(element =>allProducts.push(element.dataValues)))
-            .then(()=> res.render('products/products', {style: '/css/products.css', allProducts} ))
+            .then(()=> res.render('products/products', {style: '/css/products.css', allProducts}))
             .catch(error=> res.status(500).json('ERROR: DB_ERROR'))
     },
 

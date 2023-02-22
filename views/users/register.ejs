@@ -54,7 +54,7 @@
             <ul id="addressErrors"></ul>
          
             <label for="image">Elige tu Foto de Perfil</label>
-            <input type="file" name="image" id="image" >
+            <input type="file" name="image" id="image" accept="image/png, image/jpeg, image/gif, image/jpg">
             <% if (locals.errors && errors.image) { %>
                 <p style="color: red;"> <%= errors.image.msg %></p>
             <% } %> 
