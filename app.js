@@ -40,6 +40,6 @@ app.use(apiProductsRouter);
 app.use(apiUserRouter);
 
 
-app.listen(3000, ()=>{
-    console.log(`Servidor express escuchando puerto 3000`)
+app.listen(3001, ()=>{
+    console.log(`Servidor express escuchando puerto 3001`)
 })
