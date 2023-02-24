@@ -65,6 +65,10 @@ main button{
 main a{
     color: blue;
 }
+main ul {
+    margin-left: 10px;
+     padding: 3px;
+    }
 
 
 @media (min-width: 1024px){

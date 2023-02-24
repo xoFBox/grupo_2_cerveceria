@@ -65,6 +65,11 @@ main a{
     color: blue;
 }
 
+main ul{
+ margin-left: 18px;
+ padding: 3px;
+}
+
 @media (min-width: 1024px){
     main div{
 

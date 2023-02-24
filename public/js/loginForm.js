@@ -3,6 +3,10 @@ window.onload= ()=>{
     const emailError = document.getElementById("emailError");
     const acceptedEmails = ['gmail.com', 'hotmail.com', 'outloock.com', 'yahoo.com', 'yahoo.com.ar'];
     const passwordError = document.getElementById("passwordError");
+    const catForm = document.getElementById("categoryForm");
+    const newCategory = document.getElementById("newCategory");
+    const categoryError = document.getElementById("newCategoryError");
+
     form.addEventListener("submit", (e)=>{
         e.preventDefault()
         let errors = 0
@@ -25,5 +29,18 @@ window.onload= ()=>{
         };
         if(errors===0) form.submit()
 
+    });
+
+    catForm.addEventListener("submit", e => {
+        e.preventDefault()
+        let errors = 0
+        categoryError.innerHTML = ""
+
+       if(validator.isEmpty(newCategory.value)){
+            errors ++
+            categoryError.innerHTML = `<li style="color: red"> Debe escribir una categoría </li>`
+        } 
+        
+        if(errors===0) catForm.submit()
     })
 }
