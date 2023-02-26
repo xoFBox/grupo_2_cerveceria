@@ -20,7 +20,7 @@
                   <h4>  <%=allProducts[i].name %></h4>
                   <input class="info" name="name" value="<%=allProducts[i].name %>"> 
                   <% if (allProducts[i].product_category_id == "1") { %>
-                  <p>ALC: <%=allProducts[i].alc %> / IBU <%=allProducts[i].ibu %> </p>
+                  <p>ALC: <%=allProducts[i].alc %> / IBU <%=allProducts[i].IBU %> </p>
                <% } %>
                </div>
                <a href="/products/detail/<%=allProducts[i].id %>">
