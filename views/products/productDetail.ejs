@@ -41,7 +41,7 @@
                 <a href="products/cart"><input type="submit" value="Agregar al carrito"></a>
              </div>
 
-             <% if(locals.user.category_id == "admin") {%>
+             <% if(locals.user && locals.user.category_id == "admin") {%>
                 <form action="/products/update/<%= showProduct.id%>" method="GET" >
                     <button type="submit" class="action-button delete">MODIFICAR</button>
                 </form>
