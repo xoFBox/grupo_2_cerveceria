@@ -12,6 +12,10 @@ html{
     font-family: 'Roboto Condensed', sans-serif;
 }
 
+body{
+    background-color: black;
+}
+
 header{
     top: 0;
     position: fixed;
