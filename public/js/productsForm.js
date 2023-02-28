@@ -50,7 +50,7 @@ form.addEventListener('submit', e =>{
     if(form.description.value.trim() === ""){
         errorCount ++
         descriptionErrors.innerHTML += `<li style="color: red"> Descripcion de producto es campo obligatorio </li>`
-    } else if(!validator.isLength(form.description.value.trim(), { min: 20, max: 200 })){
+    } else if(!validator.isLength(form.description.value.trim(), { min: 20, max: 1000 })){
         errorCount ++
         descriptionErrors.innerHTML += `<li style="color: red"> Debe contener al menos 20 caracteres</li>`
     }

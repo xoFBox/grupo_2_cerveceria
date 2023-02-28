@@ -15,11 +15,25 @@
         <div class="category"> Categoría: <%= locals.user.category_id %> </div>
         <br>
 
-        <a href="/user/edit/<%= locals.user.id %>" ><button type="sumit">Editar</button></a>
+        <a href="/user/edit/<%= locals.user.id %>" ><button type="sumit">Editar Perfil</button></a>
 
         <form action="/user/delete/<%= locals.user.id %>?_method=DELETE" method="POST" >
             <button type="submit" class="action-button delete">Borrar Cuenta</button>
         </form>
+        <% if(locals.user.category_id == "admin") {%>
+            <div class="button-create-product">
+                <form action="/products/create" method="GET" >
+                    <button type="submit" class="action-button">CREAR PRODUCTO</button>
+                </form>
+            </div>
+
+            <form action="/user/newCategory" method="POST" id="categoryForm">
+                <label for="newCategory"></label>
+                <input type="text" name="newCategory" id="newCategory" placeholder="Crear nueva Categoria">
+                <ul id="newCategoryError"></ul>
+                <button type="submit">Crear</button>
+            </form>
+        <% } %>
     </section>
     <%- include('../partials/footer') %> 
 </body>

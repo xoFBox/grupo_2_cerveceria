@@ -6,20 +6,12 @@
 <main>
     
     <section>
-        <div class="button-create-product">
-            <form action="/products/create" method="GET" >
-                <button type="submit" class="action-button">CREAR PRODUCTO</button>
-            </form>
-        </div>
         <div class="details-imgarticle">
          <% for(i=0; i<allProducts.length; i++){ %> 
-          <article>
-            <div class="id"><%=allProducts[i].id  %></div>
+          <article class="product-form">
+            <div class="id"></div>
                <div class="details-descripcion">
                   <h4>  <%=allProducts[i].name %></h4>
-                  <% if (allProducts[i].category == "cerveza") { %>
-                  <p>ALC: <%=allProducts[i].ALC %> / IBU <%=allProducts[i].IBU %> </p>
-               <% } %>
                </div>
                <a href="/products/detail/<%=allProducts[i].id %>">
                 <img src="/images/products/<%=allProducts[i].image %>" alt="<%=allProducts[i].name %>" width="100%">

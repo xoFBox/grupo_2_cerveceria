@@ -8,7 +8,7 @@
         <div>
             <h5>Actualice tu producto</h5>
             <form id="productCreationForm" action="/products/update/<%= product.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
-                <label for="name"></label>
+                <label for="name">Nombre</label>
                 <input type="text" name="name" id="name" value="<%= locals.oldData ? oldData.name : product.name %>" placeholder="Nombre del producto">
                 <% if (locals.errors && errors.name) { %>
                     <p style="color: red"> <%= errors.name.msg %></p>
@@ -16,7 +16,7 @@
                 <ul id="nameErrors"></ul>
 
 
-                <label for="description"></label>
+                <label for="description">Descripción</label>
                 <textarea type="text" name="description" id="description" rows="5" placeholder="Descripción del producto"><%= locals.oldData ? oldData.description : product.description %></textarea>
                 <% if (locals.errors && errors.description) { %>
                     <p style="color: red"> <%= errors.description.msg %></p>
@@ -31,6 +31,7 @@
                 <% } %>
                 <ul id="imageErrors"></ul>
 
+                <label for="">Categoria</label>
                 <select name="category" id="pCategory" placeholder="Categoría">
                     <option disabled selected>Selecciona la Categoría</option>
                     <% categories.forEach(cat=>{ %>
@@ -44,16 +45,18 @@
 
                 <section>
                     <article>
+                        <label for="">IBU</label>
                         <input type="text" name="IBU" id="IBU" placeholder="Ingresa el IBU" value="<%= locals.oldData ? oldData.IBU : product.ibu %>">
                         <ul id="ibuErrors"></ul>
                     </article>
                     <article>
+                        <label for="">ALC</label>
                         <input type="text" name="ALC" id="ALC" placeholder="Ingresa el ALC" value="<%= locals.oldData ? oldData.ALC : product.alc %>">
                         <ul id="alcErrors"></ul>
                     </article>
                 </section>
 
-                <label for="price"></label>
+                <label for="price">Precio</label>
                 <input type="text" name="price" id="price" value="<%= locals.oldData ? oldData.price : product.price %>">
                 <% if (locals.errors && errors.price) { %>
                     <p style="color: red"> <%= errors.price.msg %></p>

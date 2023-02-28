@@ -40,13 +40,16 @@
                 <i class="fas fa-shopping-cart"></i>
                 <a href="products/cart"><input type="submit" value="Agregar al carrito"></a>
              </div>
-             <form action="/products/update/<%= showProduct.id%>" method="GET" >
-                <button type="submit" class="action-button delete">MODIFICAR</button>
-            </form>
-             <form action="/products/delete/<%= showProduct.id%>?_method=DELETE" method="POST" >
-                <button type="submit" class="action-button delete">ELIMINAR</button>
-            </form>
 
+             <% if(locals.user.category_id == "admin") {%>
+                <form action="/products/update/<%= showProduct.id%>" method="GET" >
+                    <button type="submit" class="action-button delete">MODIFICAR</button>
+                </form>
+                <form action="/products/delete/<%= showProduct.id%>?_method=DELETE" method="POST" >
+                    <button type="submit" class="action-button delete">ELIMINAR</button>
+                </form>
+            <% } %>
+            
              </div>
              <p><%=showProduct.description %></p>
           </article>

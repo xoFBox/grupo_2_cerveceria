@@ -94,7 +94,12 @@ const productController = {
             }
 
             db.Product.create(productToStore)
-            .then(() => res.redirect('/products'))
+            .then(() => {
+            if(productToStore.product_category_id ==="1"){
+                res.redirect('/products')
+            }else{
+                res.redirect('/products/comidas')
+            }})
             .catch(error=> res.status(500).json('ERROR: DB_ERROR' + error))
         }},
 
@@ -126,7 +131,13 @@ const productController = {
                     },
                 }
             )
-            .then(() => res.redirect('/products'))
+            .then(() => {
+                if(productToStore.product_category_id ==="1"){
+                    res.redirect('/products')
+                }else{
+                    res.redirect('/products/comidas')
+                }
+            })
             .catch(error=> res.status(500).json('ERROR: DB_ERROR' + error))
         }},
     destroy : (req, res) => {
@@ -135,7 +146,7 @@ const productController = {
             id: req.params.id
         }
        })
-       .then(() => res.redirect('/products'))
+       .then(() => res.redirect('/'))
        .catch(error=> res.status(500).json('ERROR: DB_ERROR' + error))
 	}
 }

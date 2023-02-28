@@ -2,7 +2,7 @@ const { Router } = require('express');
 const multer = require('multer');
 const path = require('path');
 const validationsMiddleware = require('../middlewares/productValidation');
-
+const userAdminValidation = require('../middlewares/userAdminValidation')
 
 const productController = require('../controllers/productController')
 
@@ -29,10 +29,10 @@ productRoute.get('/cart', productController.cart);
 productRoute.post('/cart', productController.cartCreate);
 
 
-productRoute.get('/create', productController.create );
+productRoute.get('/create', userAdminValidation, productController.create );
 productRoute.post('/create', upload.single('image'), validationsMiddleware , productController.storage)
 
-productRoute.get('/update/:id', productController.edit );
+productRoute.get('/update/:id', userAdminValidation,  productController.edit );
 productRoute.put('/update/:id', upload.single('image'), validationsMiddleware , productController.update );
 
 productRoute.delete('/delete/:id', productController.destroy );
