@@ -30,7 +30,7 @@ const productsResponse = (prod) =>{
         image: prod.image,
         price: prod.price,
         category: prod.category,
-        urlImage: `localhost:3001/images/products/${prod.image}`
+        urlImage: `http://localhost:3001/images/products/${prod.image}`
     }
     if(prod.id == "1"){
         prodWithUrl.ibu = prod.ibu

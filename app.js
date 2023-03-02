@@ -1,8 +1,7 @@
-const exp = require('constants')
 const express = require('express')
-const path = require('path')
 const methodOverride = require('method-override')
 const session = require('express-session')
+const cors = require('cors');
 
 const mainRoute = require('./src/routes/main')
 const productRoute = require('./src/routes/product')
@@ -14,6 +13,9 @@ const userLogueado = require('./src/middlewares/userLoguedo')
 
 const app = express()
 
+app.use(cors({
+    origin: 'http://localhost:3000'
+}));
 app.use(methodOverride('_method'))
 app.use(express.json())
 app.use(express.urlencoded({extended: false}))
@@ -25,6 +27,9 @@ app.use(session({
     resave: false,
     saveUninitialized: false,
 }))
+
+
+
 app.use(cookies())
 app.use(userLogueado)
 
