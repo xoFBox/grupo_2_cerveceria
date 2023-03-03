@@ -117,3 +117,24 @@ Debeariamos empezar a reacer la aplicacion en react con react-bootstrap.
 4) Que deberiamos dejar de hacer?
 
 Deberiamos dejar de usar ejs. La verdad que el sprint fue bastante corto pero nos lleva a seguir cambiando aspectos de las vistas con ejs cuando ya estamos avanzando con react.
+
+
+==================================================
+# Retrospectiva # Sprint 8
+
+1) Que hicimos bien?
+
+En este sprint logramos el objetivo que el mismo pedia, pudimos notar que fue uno de los mas rapidos que pudimos resolver y destacamos el entusiasmo de aprender React. Logramos mejorar un punto que anotamos en los sprint anterior, hemos mejorado mucho el CSS de la aplicacion en este mismo sprint final.
+
+2) Que hicimos mal?
+
+Puede ser que del lado de React nos quedamos con ganas de darle nuestro propio estilo y hacer un buen compaginado, creemos que este objetivo no se cumplio por los tiempos de esta recta final.
+
+3) Que deberiamos empezar a hacer?
+
+Creo que todos los integrantes del equipo coincidimos en realizar mas proyectos React ya que es un tema que gusto mucho, por ende seguiremos investigando en el tema, estudiando y practicando.
+
+4) Que deberiamos dejar de hacer?
+
+Si bien hemos mejorado mucho el CSS del proyecto para la presentacion final, en este sprint 8 volvimos a poner las funcionalidades muy por encima del estilo visual, y de aca a futuro sentimos que es importante que ambos temas vayan de la mano.
+
