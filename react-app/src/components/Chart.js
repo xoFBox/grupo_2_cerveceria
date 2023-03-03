@@ -3,6 +3,7 @@ import ChartRow from './ChartRow';
 
 
 function Chart (props){
+<<<<<<< HEAD
     console.log(props.products.products)
     // id: prod.id,
     //     name: prod.name,
@@ -11,6 +12,8 @@ function Chart (props){
     //     price: prod.price,
     //     category: prod.category,
     //     urlImage: `http://localhost:3001/images/products/${prod.image}`
+=======
+>>>>>>> 8128e3484fd9d8063f3be01824a90496e4e513cb
     return (
         /* <!-- DataTales Example --> */
         <div className="card shadow mb-4">
