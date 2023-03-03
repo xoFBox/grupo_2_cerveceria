@@ -7,31 +7,19 @@ import { Link, Route, Switch } from "react-router-dom";
 import Chart from "./Chart";
 
 function SideBar() {
-  const [apiProductsResponse, setApiProductsResponse] = useState([]);
-  const [apiUsersResponse, setApiUsersResponse] = useState([]);
+  const [apiResponse, setApiResponse] = useState({products: undefined, users: undefined});
 
   useEffect(() => {
-    fetch("http://localhost:3001/api/products")
-      .then((res) => res.json())
-      .then((data) => setApiProductsResponse(data))
+    Promise.all([fetch("/api/products").then(res=> res.json()), fetch("/api/users").then(res=> res.json())])
+      .then( data => {
+        setApiResponse({products: data[0], users: data[1]})
+      })
       .catch((err) => console.log(err));
   }, []);
-
-  useEffect(() => {
-    fetch("http://localhost:3001/api/users")
-      .then((res) => res.json())
-      .then((data) => setApiUsersResponse(data))
-      .catch((err) => console.log(err));
-  }, []);
-
-  const props = {
-    products: apiProductsResponse,
-    users: apiUsersResponse,
-  };
 
   return (
     <React.Fragment>
-      {apiProductsResponse.products && apiUsersResponse.data && (
+      {apiResponse.products && apiResponse.users && (
         <div id="wrapper">
           <ul
             className="navbar-nav bg-gradient-secondary sidebar sidebar-dark accordion"
@@ -87,16 +75,16 @@ function SideBar() {
 
           <Switch>
             <Route exact path="/">
-              <ContentWrapper {...props} />
+              <ContentWrapper {...apiResponse} />
             </Route>
             <Route path="/CategoriesInDb">
-              <CategoriesInDb {...props.products} />
+              <CategoriesInDb {...apiResponse.products} />
             </Route>
             <Route path="/LastProductInDb">
-              <LastProductInDb {...props.products.products[props.products.products.length - 1]} />
+              <LastProductInDb {...apiResponse.products.products[apiResponse.products.products.length - 1]} />
             </Route>
             <Route path="/Chart">
-              <Chart {...props} />
+              <Chart {...apiResponse} />
             </Route>
             <Route component={NotFound} />
           </Switch>
